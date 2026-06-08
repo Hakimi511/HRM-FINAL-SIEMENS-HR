@@ -1,0 +1,16 @@
+# 临时分析文件
+_quiz_*.json
+_quiz_*.txt
+
+# 原始资料源目录（已转换/复制到 materials/，提交副本即可，避免仓库体积翻倍）
+EA 产品/
+EP 产品/
+
+# 操作系统 / 编辑器
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+~$*
+.vscode/
+.idea/

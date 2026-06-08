@@ -1,0 +1,3055 @@
+{
+ "meta": {
+  "title": "西门子 SI 渠道销售专家测试题库",
+  "source": "25专家测试题.xlsx",
+  "totalQuestions": 136,
+  "totalCategories": 25,
+  "single": 87,
+  "multiple": 49
+ },
+ "modules": [
+  {
+   "id": "digital",
+   "name": "数字化产品",
+   "icon": "🔌",
+   "desc": "西门子智能配电与能源数字化平台产品知识",
+   "categories": [
+    "数字化MGMS",
+    "数字化NXpower",
+    "Powermanager",
+    "数字化ECX",
+    "数字化SC Insights",
+    "EA数字化SCADA",
+    "EA数字化ISED"
+   ]
+  },
+  {
+   "id": "sales",
+   "name": "销售技能",
+   "icon": "💼",
+   "desc": "线索开发、解决方案销售与大客户管理",
+   "categories": [
+    "潜在客户生成",
+    "发展竞争策略",
+    "客户预测分析",
+    "解决方案销售",
+    "大客户管理",
+    "销售专家的软技能",
+    "武功秘籍"
+   ]
+  },
+  {
+   "id": "negotiation",
+   "name": "谈判与沟通",
+   "icon": "🤝",
+   "desc": "高效谈判、沟通协作与多向管理",
+   "categories": [
+    "高效谈判的两大策略",
+    "谈判技巧新思路训练",
+    "跨智能沟通与协作技巧",
+    "向上管理、向下管理与平行管理"
+   ]
+  },
+  {
+   "id": "soft",
+   "name": "职场软技能",
+   "icon": "🧠",
+   "desc": "情绪与冲突管理、抗挫力与时间管理",
+   "categories": [
+    "在工作中管理情绪",
+    "冲突解决基础知识",
+    "如何进行冲突管理",
+    "如何正确面对销售挫折",
+    "时间管理的法则与技巧",
+    "时间管理与效率提升"
+   ]
+  },
+  {
+   "id": "finance",
+   "name": "财务知识",
+   "icon": "📈",
+   "desc": "企业财务报表分析",
+   "categories": [
+    "企业财务报表分析"
+   ]
+  }
+ ],
+ "categories": [
+  {
+   "name": "数字化MGMS",
+   "module": "digital",
+   "count": 9,
+   "single": 8,
+   "multiple": 1
+  },
+  {
+   "name": "数字化NXpower",
+   "module": "digital",
+   "count": 11,
+   "single": 5,
+   "multiple": 6
+  },
+  {
+   "name": "Powermanager",
+   "module": "digital",
+   "count": 11,
+   "single": 10,
+   "multiple": 1
+  },
+  {
+   "name": "数字化ECX",
+   "module": "digital",
+   "count": 5,
+   "single": 0,
+   "multiple": 5
+  },
+  {
+   "name": "数字化SC Insights",
+   "module": "digital",
+   "count": 4,
+   "single": 1,
+   "multiple": 3
+  },
+  {
+   "name": "企业财务报表分析",
+   "module": "finance",
+   "count": 7,
+   "single": 7,
+   "multiple": 0
+  },
+  {
+   "name": "潜在客户生成",
+   "module": "sales",
+   "count": 2,
+   "single": 2,
+   "multiple": 0
+  },
+  {
+   "name": "发展竞争策略",
+   "module": "sales",
+   "count": 3,
+   "single": 3,
+   "multiple": 0
+  },
+  {
+   "name": "客户预测分析",
+   "module": "sales",
+   "count": 4,
+   "single": 4,
+   "multiple": 0
+  },
+  {
+   "name": "在工作中管理情绪",
+   "module": "soft",
+   "count": 1,
+   "single": 1,
+   "multiple": 0
+  },
+  {
+   "name": "冲突解决基础知识",
+   "module": "soft",
+   "count": 3,
+   "single": 3,
+   "multiple": 0
+  },
+  {
+   "name": "向上管理、向下管理与平行管理",
+   "module": "negotiation",
+   "count": 2,
+   "single": 2,
+   "multiple": 0
+  },
+  {
+   "name": "解决方案销售",
+   "module": "sales",
+   "count": 5,
+   "single": 5,
+   "multiple": 0
+  },
+  {
+   "name": "大客户管理",
+   "module": "sales",
+   "count": 2,
+   "single": 2,
+   "multiple": 0
+  },
+  {
+   "name": "高效谈判的两大策略",
+   "module": "negotiation",
+   "count": 7,
+   "single": 7,
+   "multiple": 0
+  },
+  {
+   "name": "如何进行冲突管理",
+   "module": "soft",
+   "count": 3,
+   "single": 1,
+   "multiple": 2
+  },
+  {
+   "name": "如何正确面对销售挫折",
+   "module": "soft",
+   "count": 3,
+   "single": 0,
+   "multiple": 3
+  },
+  {
+   "name": "时间管理的法则与技巧",
+   "module": "soft",
+   "count": 3,
+   "single": 2,
+   "multiple": 1
+  },
+  {
+   "name": "时间管理与效率提升",
+   "module": "soft",
+   "count": 28,
+   "single": 14,
+   "multiple": 14
+  },
+  {
+   "name": "谈判技巧新思路训练",
+   "module": "negotiation",
+   "count": 4,
+   "single": 3,
+   "multiple": 1
+  },
+  {
+   "name": "跨智能沟通与协作技巧",
+   "module": "negotiation",
+   "count": 4,
+   "single": 0,
+   "multiple": 4
+  },
+  {
+   "name": "销售专家的软技能",
+   "module": "sales",
+   "count": 2,
+   "single": 0,
+   "multiple": 2
+  },
+  {
+   "name": "EA数字化SCADA",
+   "module": "digital",
+   "count": 1,
+   "single": 1,
+   "multiple": 0
+  },
+  {
+   "name": "EA数字化ISED",
+   "module": "digital",
+   "count": 10,
+   "single": 5,
+   "multiple": 5
+  },
+  {
+   "name": "武功秘籍",
+   "module": "sales",
+   "count": 2,
+   "single": 1,
+   "multiple": 1
+  }
+ ],
+ "questions": [
+  {
+   "id": 16159,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "MGMS平台动态预测最小时间间隔为",
+   "options": [
+    "15分钟",
+    "30分钟",
+    "60分钟",
+    "120分钟"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16160,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "MGMS负荷预测需要接入第三方的数据是",
+   "options": [
+    "建筑参数",
+    "天气环境数据",
+    "设备参数",
+    "人员参数"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16161,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "MGMS平台针对工厂的涉及工艺的能源设备采用的是",
+   "options": [
+    "人工控制",
+    "优化管控",
+    "只监不控",
+    "运程控制"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16162,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "MGMS平台解决客户的那些痛点问题，下列不属于的项是",
+   "options": [
+    "实现能源精细化管控",
+    "如何制定最优的源网荷储协同的运行策略",
+    "实现多能互补系统高效运行",
+    "实现完全的无人值守"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16185,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "MGMS是定位于以下哪个技术领域的产品",
+   "options": [
+    "电气化",
+    "自动化",
+    "数字化"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16186,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "下列哪项不属于MGMS功能________",
+   "options": [
+    "微电网运行优化决策",
+    "下发冷机运行台数策略",
+    "下发冷机优化参数",
+    "联锁控制设备运行"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16187,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "下列哪项不属于MGMS收益________",
+   "options": [
+    "降低运行费用",
+    "提高运维效率",
+    "降低投资成本"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16188,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "single",
+   "question": "MGMS的软件配置服务目前由___提供",
+   "options": [
+    "西门子",
+    "第三方合作伙伴",
+    "用户自己"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16189,
+   "category": "数字化MGMS",
+   "module": "digital",
+   "type": "multiple",
+   "question": "MGMS可以用于下列哪些行业中的制冷站_______",
+   "options": [
+    "数据中心",
+    "电子厂房",
+    "生物制药",
+    "医院"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16163,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "multiple",
+   "question": "NXpower能源管理组件包含以下哪些功能[多选题]",
+   "options": [
+    "能源报警",
+    "能源报表",
+    "能源成本管理",
+    "能源KPI管理"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16164,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "single",
+   "question": "NXpower资产管理组件包含以下哪些功能",
+   "options": [
+    "资产生命周期管理（ALM）",
+    "运行数据监控、断路器老化分析",
+    "预防性维护（PM）、资产日历",
+    "工单执行"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16165,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "multiple",
+   "question": "NXpower通过哪些方案/服务提升高压组合电器、变压器、中低压开关设备的可靠性[多选题]",
+   "options": [
+    "资产管理咨询",
+    "资产性能管理APM/企业资产管理EAM",
+    "远程诊断和在线监测方案",
+    "西门子覆盖整个电力流的完整产品系列"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16166,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "single",
+   "question": "NXpower方案中，用作云网关的设备是",
+   "options": [
+    "SICAM A8000",
+    "GridEdge",
+    "SICAM Studio",
+    "SICAM PAS"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16167,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "single",
+   "question": "智能基础设施集团的一站式智能配电解决方案NXpower部署方式有哪些？",
+   "options": [
+    "云端部署",
+    "本地部署",
+    "基于7SJ686+的就地部署",
+    "以上都可以"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": false,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16168,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "multiple",
+   "question": "智能基础设施集团的一站式智能配电解决方案NXpower主要包含哪些业务范围",
+   "options": [
+    "智能中压开关设备",
+    "智能低压开关设备",
+    "智能边缘控制装置",
+    "软件",
+    "智能断路器"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16169,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "multiple",
+   "question": "智能空气开关设备可以实现以下哪些主要智能功能？",
+   "options": [
+    "在线测温",
+    "柜内视频监测",
+    "电动底盘车",
+    "电动地刀",
+    "断路器特性（线圈、电机）在线监测"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16170,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "single",
+   "question": "NXpower中，AMS 指的是什么系统?",
+   "options": [
+    "能源管理系统",
+    "资产管理系统",
+    "电力监控系统",
+    "电能质量管理系统"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16171,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "single",
+   "question": "NXpower中，EMS 指的是什么系统",
+   "options": [
+    "能源管理系统",
+    "资产管理系统",
+    "电力监控系统",
+    "电能质量管理系统"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16172,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "multiple",
+   "question": "以下描述正确的是",
+   "options": [
+    "智能开关柜是在传统开关柜基础上，通过集成各种传感器，来实现开关柜健康状态的实时监测，方便用户随时评估开关柜的运行风险",
+    "智能开关柜所使用的真空开关和操作机构，与传统开关柜的完全不一样",
+    "智能开关柜只能适用于部分行业用户，传统开关柜则适合所有行业用户",
+    "智能开关柜的成本与用户要求的智能功能相关，用户需要的功能越多，相对应的智能开关柜的成本就越高"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16173,
+   "category": "数字化NXpower",
+   "module": "digital",
+   "type": "multiple",
+   "question": "NXAirS空气绝缘开关柜的柜内视频监测功能，目前主要实现以下哪些开关部件的实时监测",
+   "options": [
+    "电动底盘车的进出位置",
+    "断路器真空触头的位置",
+    "电动接地开关的刀头位置",
+    "低压室内的二次元件"
+   ],
+   "answer": [
+    0,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16669,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "述关于Powermanager电力监测系统的报表功能描述正确的是？ [单选题]",
+   "options": [
+    "报告的格式为 .xls、 .pdf 和 .csv",
+    "生成的报告通过 SMTP 服务器发送邮件，无需 MS Outlook",
+    "可基于 Web 创建、生成和查看报表",
+    "以上都对"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": false,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16670,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "Powermanager电力监测系统最多可扩展的客户端的数量是？ [单选题]",
+   "options": [
+    "5",
+    "10",
+    "100",
+    "255"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16671,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "单套Powermanager电力监测系统最多可接入的设备的数量是？ [单选题]",
+   "options": [
+    "200",
+    "500",
+    "1000",
+    "5000"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16672,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "西门子Powermanager能源管理和电力监控软件支持直接接入modbus协议的第三方设备。 [单选题]",
+   "options": [
+    "对",
+    "错"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16673,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "Powermanager软件对标下列Schneider哪个产品 () [单选题]",
+   "options": [
+    "PSO+PME",
+    "PSO",
+    "PME",
+    "FacilityMost"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16674,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "Panel Manager电柜管家作为配电站级别的能源管理单元，其特点是? () [单选题]",
+   "options": [
+    "即插即用",
+    "提供预测性维护信息",
+    "遵循ISO50001能源管理体系",
+    "以上都是"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": false,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16675,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "Panel Manager Pro软件对标下列Schneider哪个产品 () [单选题]",
+   "options": [
+    "PME",
+    "POI",
+    "PO",
+    "千里眼"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16676,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "Panel Manager电柜管家如果要实现“数据上云”，还需要另外配置云连接模块() [单选题]",
+   "options": [
+    "对",
+    "错"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16677,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "multiple",
+   "question": "以下哪些西门子低压产品可以接入Panel Manager电柜管家？ () [多选题]",
+   "options": [
+    "3WA",
+    "3WL",
+    "3WT",
+    "3WN"
+   ],
+   "answer": [
+    0,
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16678,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "Panel Manager Pro电柜管家最多可接入的设备数量是？ () [单选题]",
+   "options": [
+    "50",
+    "100",
+    "200",
+    "300"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16679,
+   "category": "Powermanager",
+   "module": "digital",
+   "type": "single",
+   "question": "Panel Manager Pro电柜管家支持哪些智能运维功能？() [单选题]",
+   "options": [
+    "3D电柜视图",
+    "断路器老化分析",
+    "可编程告警",
+    "以上都是"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": false,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10831,
+   "category": "数字化ECX",
+   "module": "digital",
+   "type": "multiple",
+   "question": "请从下列行业中选取西门子Smart ECX智慧能碳管理平台目前重点面向的几个行业？",
+   "options": [
+    "工业园区、商业园区、办公园区等建筑园区领域",
+    "汽车、机械装备制造、纺织、电子及半导体等制造行业",
+    "数据中心",
+    "综合性医院",
+    "化工行业",
+    "地铁交通行业"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": "参考答案：ABCD，EF化工行业和地铁交通行业目前还不是ECX的重点拓展行业",
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10832,
+   "category": "数字化ECX",
+   "module": "digital",
+   "type": "multiple",
+   "question": "下列哪些相关功能是西门子Smart ECX智慧能碳管理平台已经支持和可以帮助客户实现的？",
+   "options": [
+    "支持企业按能源层级结构和能源类型实现灵活配置，实现能源管理指标分析、成本分析、流向分析等基本功能",
+    "支持多种重点用能设备的效率分析和用能优化，包括空压站、制冷站、变压器、暖通空调系统等",
+    "实现企业碳排的精细化管理，包括管理者看板全方位展示碳排放数据、模板化输出碳排报告、实时获取碳交易市场信息、科学分析降碳潜力和应用科学模型制定减碳路线图等",
+    "实现企业用能设备的资产管理，包括设备台账、设备巡检、备品备件管理、维修保养等功能"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": "参考答案：ABC，D部分功能目前暂时还不支持",
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10833,
+   "category": "数字化ECX",
+   "module": "digital",
+   "type": "multiple",
+   "question": "相比传统的能源管理平台或者软件，西门子Smart ECX智慧能碳管理平台着重解决传统能源管理平台或者软件的哪些方面问题？",
+   "options": [
+    "无法出具能源数据报表",
+    "能耗采集系统部署形式复杂，成本高",
+    "缺少碳管理功能",
+    "缺少重点用能设备的效率提升和优化"
+   ],
+   "answer": [
+    2,
+    3
+   ],
+   "explanation": "参考答案：CD，AB一般不作为传统能源管理平台或软件的缺点",
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10834,
+   "category": "数字化ECX",
+   "module": "digital",
+   "type": "multiple",
+   "question": "某个客户已经寻找了多家能源管理方面的数字化解决方案供应商，为了突出西门子及Smart ECX智慧能碳管理平台的竞争优势，下列那些优点是你觉得在跟客户交流过程中是可以去提及的？",
+   "options": [
+    "同时覆盖能源管理、碳管理、光储充微网管理等多种场景和需求的综合管理平台和解决方案；",
+    "产品具备ISO50001、ISO50002、ISO14064、等保三级等多个国际和国家级认证证书",
+    "覆盖云端ECX能碳管理平台、边缘侧楼宇到工业的各种控制器设备、以及现场侧电力能源表计、电力开关控制设备等云、边、端的一体化解决方案",
+    "拥有国际化、本土化主流产品和材料的碳排放因子数据库；国际权威的温室气体核算标准库，能够实现产品碳足迹评估报告自动生成，"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": "参考答案：ABC，D属于碳足迹管理的一部分，目前暂不针对ECX对外覆盖和提及",
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10835,
+   "category": "数字化ECX",
+   "module": "digital",
+   "type": "multiple",
+   "question": "在拓展客户及选择客户的交流对象时，客户哪些部门和角色属于西门子Smart ECX智慧能碳管理平台的重点交流对象？",
+   "options": [
+    "集团可持续发展经理；",
+    "工厂能源管理负责人",
+    "重点用能设备运维管理工程师",
+    "分布式能源（例如：光伏、储能）的管理工程师",
+    "财务负责人"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": "参考答案：ABCD，E财务人员暂不涉及",
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10836,
+   "category": "数字化SC Insights",
+   "module": "digital",
+   "type": "single",
+   "question": "西门子智慧园区管理平台SCX的技术架构有几层？[单选题]",
+   "options": [
+    "一层",
+    "两层",
+    "三层",
+    "四层"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10837,
+   "category": "数字化SC Insights",
+   "module": "digital",
+   "type": "multiple",
+   "question": "西门子智慧园区管理平台的核心竞争力是什么？[多选题]",
+   "options": [
+    "基于西门子数据中台能力的兼容性和开放性",
+    "基于客户需求提供灵活的定制开发功能",
+    "落地应用案例场景丰富，系统整合能力强",
+    "西门子品牌对于B端客户的强大影响力"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10838,
+   "category": "数字化SC Insights",
+   "module": "digital",
+   "type": "multiple",
+   "question": "西门子首个智慧园区项目“常熟MOBO协同创新产业园智慧园区”集成了下述哪些系统？[多选题]",
+   "options": [
+    "微网控制系统MGMS",
+    "智能配电监测系统NXPower",
+    "智慧能碳管理平台 Smart ECX",
+    "智慧空间管理系统Smart Space"
+   ],
+   "answer": [
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10839,
+   "category": "数字化SC Insights",
+   "module": "digital",
+   "type": "multiple",
+   "question": "交付使用后，西门子智慧园区管理平台SCX的主要用户群体是哪些？[多选题]",
+   "options": [
+    "客户公司核心高管",
+    "客户公司运营部门",
+    "客户公司销售部门",
+    "客户公司生产部门"
+   ],
+   "answer": [
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10841,
+   "category": "企业财务报表分析",
+   "module": "finance",
+   "type": "single",
+   "question": "什么在资产负债表上被标记为负债？",
+   "options": [
+    "应收账款",
+    "应付账款",
+    "库存",
+    "公司拥有的办公楼"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10842,
+   "category": "企业财务报表分析",
+   "module": "finance",
+   "type": "single",
+   "question": "根据共同比资产负债表，甲公司的库存比率是 8%，乙公司的库存比率是 14%。这两个数字告诉了你什么？",
+   "options": [
+    "甲公司达到 $100 销售额所需的库存比乙公司少。",
+    "乙公司达到 $100 销售额所需的库存比甲公司少。",
+    "甲公司比乙公司更善于周转库存。",
+    "乙公司比甲公司更善于周转库存。"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10843,
+   "category": "企业财务报表分析",
+   "module": "finance",
+   "type": "single",
+   "question": "在共同比损益表中，毛利润是如何计算的？",
+   "options": [
+    "销售成本减去营业利润",
+    "总收入减去销售成本",
+    "营业利润减去利息净支出",
+    "税前收入减去销售支出"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10844,
+   "category": "企业财务报表分析",
+   "module": "finance",
+   "type": "single",
+   "question": "可以使用什么来比较不同行业的公司？",
+   "options": [
+    "财务杠杆",
+    "毛利",
+    "股本回报率",
+    "营业利润"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10847,
+   "category": "企业财务报表分析",
+   "module": "finance",
+   "type": "single",
+   "question": "甲公司的负债比率是 84%。这表明了什么？",
+   "options": [
+    "公司正在减少其资产数量。",
+    "公司的销售额下降了 84%。",
+    "公司的大部分资产是通过股东投资购买的。",
+    "公司的大部分资产是通过借钱购买的。"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10848,
+   "category": "企业财务报表分析",
+   "module": "finance",
+   "type": "single",
+   "question": "为什么要使用流动比率来确定公司的财务健康状况？",
+   "options": [
+    "流动比率是衡量公司偿还短期负债能力的指标。",
+    "流动比率是衡量公司流动负债的指标。",
+    "流动比率是衡量公司偿还长期负债能力的指标。",
+    "流动比率是衡量公司如何使用财务杠杆获取流动资产的指标。"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10849,
+   "category": "企业财务报表分析",
+   "module": "finance",
+   "type": "single",
+   "question": "如果要预测公司明年的增长，应该主要考虑什么？",
+   "options": [
+    "公司的近期业绩",
+    "公司的过往业绩",
+    "公司的财务杠杆",
+    "公司的所有者权益"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10850,
+   "category": "潜在客户生成",
+   "module": "sales",
+   "type": "single",
+   "question": "在制定潜在客户开发目标时，为什么要从业务目标开始？",
+   "options": [
+    "为了确定开展潜在客户开发活动所需的人员数量",
+    "为了确保潜在客户开发计划与公司需要实现的目标保持一致",
+    "为了确定潜在客户开发活动的预算",
+    "为了计算潜在客户的平均转化率"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10851,
+   "category": "潜在客户生成",
+   "module": "sales",
+   "type": "single",
+   "question": "你正在参加一个行业社交活动。你想在活动上结交很多新朋友，收到很多名片。你该怎么办？",
+   "options": [
+    "在房间里四处走动，尽可能多地收集名片。",
+    "大声宣布你想扩大社交网。",
+    "研究几个关键人物，定制你要对他们说的话。",
+    "针对所有人准备相同的开场白和话术。"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10852,
+   "category": "发展竞争策略",
+   "module": "sales",
+   "type": "single",
+   "question": "下面哪个示例是将有风险的颠覆转变成竞争优势机遇？",
+   "options": [
+    "某公司根据客户不断变化的需求和渴望，在常规产品中新增了特定功能。",
+    "价格更低的竞争对手抢走了某公司的客户群。还记得通用吗？",
+    "某公司因受众特征发生变化而迁至新位置，以寻找需要其产品的新客户。",
+    "某公司因受众特征发生变化而迁至新位置，以寻找需要其产品的新客户。"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10853,
+   "category": "发展竞争策略",
+   "module": "sales",
+   "type": "single",
+   "question": "下面哪种做法存在不深入贴近客户需求的隐患？",
+   "options": [
+    "通过闲聊兴趣爱好和家庭来建立关系",
+    "定期直接销售给消费者",
+    "定制产品和服务，而不提高成本或价格",
+    "为满足客户需求，通过设计和量身定制解决方案，与客户进行交互"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10854,
+   "category": "发展竞争策略",
+   "module": "sales",
+   "type": "single",
+   "question": "下面哪种扩张规模和范围的方法最不可能会培养客户忠诚度？",
+   "options": [
+    "提升产品/服务的数量和范围",
+    "在某一特定业务领域爆炸式发展",
+    "扩大在全国和全球的经营地理位置",
+    "让服务和产品线的类型多样化"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10855,
+   "category": "客户预测分析",
+   "module": "sales",
+   "type": "single",
+   "question": "对你的企业来说，向哪种类型的客户销售商品成本最低？",
+   "options": [
+    "老客户",
+    "竞争对手的客户",
+    "现有客户",
+    "新客户"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10856,
+   "category": "客户预测分析",
+   "module": "sales",
+   "type": "single",
+   "question": "利用过去的事件来预测联系渠道的缺点是什么？",
+   "options": [
+    "可预测性非常低",
+    "并非所有潜在客户都有这类数据",
+    "数据太大。",
+    "数据可能不准确"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10857,
+   "category": "客户预测分析",
+   "module": "sales",
+   "type": "single",
+   "question": "为什么选择正确的渠道对于企业来说非常重要？",
+   "options": [
+    "使用成本",
+    "交付速度",
+    "同样的客户对不同渠道会有不同反应",
+    "客户倾向会随渠道类型发生变化。"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10858,
+   "category": "客户预测分析",
+   "module": "sales",
+   "type": "single",
+   "question": "客户组购物偏好用例将帮助预测哪种类型的客户？",
+   "options": [
+    "品牌新客",
+    "现有客户",
+    "竞争对手的客户",
+    "老客户"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10860,
+   "category": "在工作中管理情绪",
+   "module": "soft",
+   "type": "single",
+   "question": "如果_____，那么在工作中分享情绪是合适的。",
+   "options": [
+    "你觉得偏离了自己的中心并需要一些帮助",
+    "你需要有人告诉你，你有这种感觉是否正确",
+    "你的情绪是理所当然的",
+    "你觉得不分享情绪会损害你与同事或客户的信任或关系"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10862,
+   "category": "冲突解决基础知识",
+   "module": "soft",
+   "type": "single",
+   "question": "为什么理解我们对冲突的回应方式至关重要？",
+   "options": [
+    "陷入争执时会锻炼我们如何更有效抉择的能力。",
+    "这提高了别人的感知，使他们知道他们的行为让我们感到不悦。",
+    "这让他人无法轻易冒犯或打扰到我们。",
+    "这让我们了解在第一时间回避冲突的更优方法。"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10863,
+   "category": "冲突解决基础知识",
+   "module": "soft",
+   "type": "single",
+   "question": "在解决冲突的对话中，重构策略的主要目标是什么？",
+   "options": [
+    "让冲突伙伴尽快满足自己的需求",
+    "严肃对待问题，但要善意对待冲突伙伴",
+    "确定谁是谁非、谁对谁错",
+    "为冲突双方创造一个双赢局面"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10864,
+   "category": "冲突解决基础知识",
+   "module": "soft",
+   "type": "single",
+   "question": "如何避免在同冲突伙伴沟通时再次落入互相指责的境地？",
+   "options": [
+    "在新的冲突发生时做到求同存异。",
+    "有人从中调停之前，避免深入讨论分歧较大的问题。",
+    "用巨大的耐心，积极倾听，复述和重构问题。",
+    "全力避免意见不一的情况。"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10865,
+   "category": "向上管理、向下管理与平行管理",
+   "module": "negotiation",
+   "type": "single",
+   "question": "向上管理是你能掌握的最重要技能之一，因为所有业务的本质就是关系。",
+   "options": [
+    "正确",
+    "错误"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10866,
+   "category": "向上管理、向下管理与平行管理",
+   "module": "negotiation",
+   "type": "single",
+   "question": "大多数领导者在初次担任管理岗位时犯的最大错误是什么？",
+   "options": [
+    "要求加薪",
+    "召开过多会议",
+    "未能评估团队并快速做出所需的更改",
+    "拖太久才提拔员工"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10867,
+   "category": "解决方案销售",
+   "module": "sales",
+   "type": "single",
+   "question": "有关销售的两个误解是什么？",
+   "options": [
+    "“针对客户的目标”和“推销就是对话”。",
+    "“你只需要提出问题”和“针对客户的目标”。",
+    "“推销就是对话”和“你只需要提出问题”。",
+    "“推销就是对话”和“你必须分享所有购买理由”。"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10868,
+   "category": "解决方案销售",
+   "module": "sales",
+   "type": "single",
+   "question": "与潜在客户互动之前，你可以做些什么以便鉴定潜在客户？",
+   "options": [
+    "了解对你产品或服务是否存在普遍需求。",
+    "所有答案都对",
+    "查明这个潜在客户是否面临你的解决方案能解决的问题。"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10869,
+   "category": "解决方案销售",
+   "module": "sales",
+   "type": "single",
+   "question": "为了让你在竞争中脱颖而出，你可以如何为客户创造价值？",
+   "options": [
+    "帮助客户了解他们尚未考虑过的问题和已经错过的机会。",
+    "所有答案都对",
+    "通过为客户提供他们尚未考虑的解决方案来解决客户问题，并检查问题的意外后果。"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10870,
+   "category": "解决方案销售",
+   "module": "sales",
+   "type": "single",
+   "question": "要有效地开始销售拜访，可以遵循三个步骤是什么？",
+   "options": [
+    "分享客户评价、强调买家期望的价值、检查反应",
+    "提供相关背景信息、强调买家期望的价值、检查反应",
+    "提供相关背景信息、分享产品特征、检查反应",
+    "提供相关背景信息、强调买家期望的价值、提出大量问题"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10871,
+   "category": "解决方案销售",
+   "module": "sales",
+   "type": "single",
+   "question": "为了引导对话，你可以使用的人际交往技能有哪些？",
+   "options": [
+    "获得理解、确认、认可、分享相关信息",
+    "提出要求、确认理解是否正确、认可、分享相关信息",
+    "澄清、确认理解是否正确、说明影响、分享相关信息",
+    "澄清、确认理解是否正确、认可、分享相关信息"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10873,
+   "category": "大客户管理",
+   "module": "sales",
+   "type": "single",
+   "question": "应该评估的最重要的大客户成果是什么？",
+   "options": [
+    "客户目标",
+    "活动和会议",
+    "保留客户",
+    "销售收入"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10874,
+   "category": "大客户管理",
+   "module": "sales",
+   "type": "single",
+   "question": "制定大客户标准时，应当从哪里入手？",
+   "options": [
+    "从所有契合自己企业文化的客户入手。",
+    "从某个市场或行业入手。",
+    "从创收最高的十大客户入手。",
+    "从企业的战略计划入手。"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10876,
+   "category": "高效谈判的两大策略",
+   "module": "negotiation",
+   "type": "single",
+   "question": "如果你在谈判中总是想着自己的＿＿＿＿，你最终的谈判结果，就更有可能会在你的底线附近；而如果你专注于＿＿＿＿，则更可能谈出个好价钱。",
+   "options": [
+    "目标，底线",
+    "底线，最优备选方案",
+    "底线，目标",
+    "最优备选方案，目标"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10877,
+   "category": "高效谈判的两大策略",
+   "module": "negotiation",
+   "type": "single",
+   "question": "如果对方凭空捏造一个条件，试图将你的注意力从真正的谈判重点上引开。这时候你应该特别注意并牢牢守住自己的＿＿＿＿。",
+   "options": [
+    "谈判底线",
+    "谈判目标",
+    "最优备选方案",
+    "其他三项都是"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": false,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10878,
+   "category": "高效谈判的两大策略",
+   "module": "negotiation",
+   "type": "single",
+   "question": "相对于谈判＿＿＿＿，你更应专注于＿＿＿＿的位置，这样有助于获得更理想的谈判结果。",
+   "options": [
+    "目标，底线",
+    "最优备选方案，底线",
+    "底线，目标"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10879,
+   "category": "高效谈判的两大策略",
+   "module": "negotiation",
+   "type": "single",
+   "question": "如果要向对方传达你的备选方案，怎么说比较好？",
+   "options": [
+    "手头没有好的备选方案，故选择不说",
+    "想办法暗示对方，我还有一个比较好的选择",
+    "谎称自己有一个好的备选方案，但实际上并没有",
+    "即使备选方案不理想，也要把详细情况传达给对方"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10880,
+   "category": "高效谈判的两大策略",
+   "module": "negotiation",
+   "type": "single",
+   "question": "只要我清楚知道自己的底线在哪里，就绝不会在谈判中超过自己的底线来做交易。",
+   "options": [
+    "没错",
+    "未必"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10881,
+   "category": "高效谈判的两大策略",
+   "module": "negotiation",
+   "type": "single",
+   "question": "“我们有一个最低要求你必须答应”，“这是极其重大的让步”等，这类说法都是传达＿＿＿＿的一种方法。",
+   "options": [
+    "谈判目标",
+    "谈判策略",
+    "谈判底线",
+    "其他三项都是"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": false,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10882,
+   "category": "高效谈判的两大策略",
+   "module": "negotiation",
+   "type": "single",
+   "question": "在谈判当中，你无需花费时间精力去分析对方的最优备选方案是什么，这与你无关。",
+   "options": [
+    "正确",
+    "不正确",
+    "我不知道"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10883,
+   "category": "如何进行冲突管理",
+   "module": "soft",
+   "type": "single",
+   "question": "态度不同就是意识的冲突，是以认识为基础，所以是（）的。而处理方法的不同就是物质的冲突，这种冲突是可见的，（）。（单选）",
+   "options": [
+    "有形的、无形的",
+    "无形的、有形的",
+    "有形的、有形的",
+    "无形的、无形的"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10884,
+   "category": "如何进行冲突管理",
+   "module": "soft",
+   "type": "multiple",
+   "question": "根据冲突范围可将冲突分为以下哪几种？（多选）",
+   "options": [
+    "人际冲突",
+    "群际冲突",
+    "组织冲突",
+    "价值观冲突"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10885,
+   "category": "如何进行冲突管理",
+   "module": "soft",
+   "type": "multiple",
+   "question": "冲突的处理包括以下哪几种方法？（多选）",
+   "options": [
+    "沟通解决法",
+    "谈判解决法",
+    "调解解决法",
+    "权威解决法",
+    "目标升级法"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10886,
+   "category": "如何正确面对销售挫折",
+   "module": "soft",
+   "type": "multiple",
+   "question": "调整心态积极面对销售挫折包括哪些内容？（多选）",
+   "options": [
+    "挫折是最好的学习",
+    "正面挫折",
+    "心态决定成败",
+    "敢于接受挑战性任务"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10887,
+   "category": "如何正确面对销售挫折",
+   "module": "soft",
+   "type": "multiple",
+   "question": "面对销售挫折一般都包括哪些内容？（多选）",
+   "options": [
+    "调整心态积极面对销售挫折",
+    "增强自我抗压能力",
+    "提升自我不断挑战销售业绩",
+    "怀疑自身"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10888,
+   "category": "如何正确面对销售挫折",
+   "module": "soft",
+   "type": "multiple",
+   "question": "提升自我不断挑战销售业绩一般包含哪些内容？（多选）",
+   "options": [
+    "销售业绩",
+    "销售技能",
+    "挑战“不可能”任务",
+    "整合身边资源赢得各方支持"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10891,
+   "category": "时间管理的法则与技巧",
+   "module": "soft",
+   "type": "single",
+   "question": "衡量一件事情的重要程度是时间管理的哪个法则",
+   "options": [
+    "意识认知法",
+    "行为清单法",
+    "整合优化法",
+    "四象类别法"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10892,
+   "category": "时间管理的法则与技巧",
+   "module": "soft",
+   "type": "single",
+   "question": "机械工作、不创新、思考的人是以下哪个角色",
+   "options": [
+    "救火员",
+    "事务员",
+    "勤务员",
+    "话务员"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10893,
+   "category": "时间管理的法则与技巧",
+   "module": "soft",
+   "type": "multiple",
+   "question": "时间管理可以采用哪些技巧（多选）",
+   "options": [
+    "零存整取法",
+    "趋向平衡法",
+    "结果导向法",
+    "劳逸结合法"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10894,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "利用碎片时间“－”法需要避免的思考误区是？",
+   "options": [
+    "利用碎片时间进行思考",
+    "利用大块时间执行",
+    "利用大段时间思考事情该怎么做，想好后再执行"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10895,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "在规划和执行工作时，依据什么层次，运用组合式工作完成法？",
+   "options": [
+    "目标→成果→时间",
+    "目标→时间→成果"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10897,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "对于三段式效率管理效率、成果和时间的理解，以下公式哪个更准确？",
+   "options": [
+    "效率=成果÷时间",
+    "效率=成果×时间",
+    "效率=成果+时间",
+    "效率=成果-时间"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10898,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "下面说法错误的是？",
+   "options": [
+    "使用组合式工作完成法会增加时间",
+    "效率是以目标来管理时间",
+    "设定区块时间，保留独处的专心时刻"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10899,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "时间管理具体该怎么做？",
+   "options": [
+    "把任务写下来，督促自己",
+    "按照重要程度给任务排序，设置时间限制，然后写在日历上，建立工作日程表",
+    "设置时间限制即可"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10900,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "会议就是应该要集思广益，大家多提意见，偶尔跳出主题外也可以。这个说法你同意吗？",
+   "options": [
+    "不同意，会议要高效就应该严格制定议程表并确实遵守，题外话会降低效率",
+    "同意，题外话有助于大家思维的开拓，主持人应该多建议大家说题外话"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10901,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "同样一小时的时间，有时可以完成一份报告，策划一个方案，有时连一封简单的邮件都写不完，差别主要在于什么？",
+   "options": [
+    "事项的难易程度不一样",
+    "精力是否集中",
+    "是否有兴趣去做"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10903,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "以下做法中，哪个做法可以提升工作专注力？",
+   "options": [
+    "设定多重通知讯息",
+    "在谈话中看手机",
+    "合理安排日程",
+    "在会议中分心"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10904,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "如何掌控自己的时间和日程？（多选）",
+   "options": [
+    "向同事表明可与你沟通的方式",
+    "强制他人提前做好准备",
+    "查看参加会议人员名单",
+    "查看会议议程"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10905,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "找到浪费时间的病因，我们可以采取哪些行动？（多选）",
+   "options": [
+    "寻找是否有可以重复利用的工作模式，节省时间",
+    "学会拒绝",
+    "设置消息免打扰时间段"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10907,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "想要战胜最后期限，拿回掌控权，可以使用以下哪些方法？（多选）",
+   "options": [
+    "学会拒绝",
+    "提前做好工作安排",
+    "沟通协调时间",
+    "寻求他人帮助",
+    "建立一份清单"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10909,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "利用碎片时间”＋“法，需要明确哪些内容？（多选）",
+   "options": [
+    "明确自己的碎片时间有哪些",
+    "做列表",
+    "明确碎片时间该怎么用"
+   ],
+   "answer": [
+    0,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10910,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "分析时间日志有什么好处？（多选）",
+   "options": [
+    "了解浪费时间的病因",
+    "了解运用时间的模式",
+    "了解什么事情没做"
+   ],
+   "answer": [
+    0,
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10913,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "记录时间日志要注意？（多选）",
+   "options": [
+    "要当下记录，不可事后回忆",
+    "坚持记录，直到掌握自己时间运用状况",
+    "记录时间以小时为单位"
+   ],
+   "answer": [
+    0,
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10914,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "想要高效利用碎片化时间，需要做到？（多选）",
+   "options": [
+    "批次处理",
+    "看到碎片时间在哪里",
+    "精力管理，消除压力",
+    "碎片时间思考，大块时间执行"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10915,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "抢救专注力可以采取以下哪些方法？（多选）",
+   "options": [
+    "赶走焦虑的情绪",
+    "放松身体",
+    "把专注力用在对的地方",
+    "转移目标"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10916,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "如何主持有效且成功的会议？（多选）",
+   "options": [
+    "制定明确的议程和目标",
+    "控制会议时间",
+    "避免不必要的会议",
+    "提前发送会议邀请"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10919,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "时间管理的四大误区是什么？（多选）",
+   "options": [
+    "只需要找到正确的理论体系或方法",
+    "时间管理是个人的事，跟别人无关，只有你知道该怎样做有道理。",
+    "你需要投入时间来促成改变",
+    "时间管理就是管理时间"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10920,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "三种提高工作效率的方法是什么？（多选）",
+   "options": [
+    "组合式工作完成法，达到成果的最短路径",
+    "使用三段式效率管理目标、成果、时间",
+    "设定区块时间，保留独处的专心时刻"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10922,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "如何才能减少花费在例行工作上的时间？（多选）",
+   "options": [
+    "利用模板",
+    "制作工作指南",
+    "建立信息库"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10924,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "利用时间日志找回时间有哪些步骤？（多选）",
+   "options": [
+    "对症下药",
+    "分析时间日志",
+    "记录时间日志"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10925,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "multiple",
+   "question": "下列哪些问题可以用来分析时间日志？（多选）",
+   "options": [
+    "完成当天工作的过程中，被打断了多少次？",
+    "要花多少时间才能重新进入状态？",
+    "中断的时间有多久？",
+    "最长打断工作的原因是什么？"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10928,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "一旦你接受了时间有限这一事实，并充分利用了快速见效的方法，你还需要对比实际与预期的时间分配情况，进一步完善预估。",
+   "options": [
+    "正确·",
+    "错误"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10929,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "工作模式化就是按照固定的模式工作。",
+   "options": [
+    "正确·",
+    "错误"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10930,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "将工作模式转化成模板后，可以一直使用。",
+   "options": [
+    "正确·",
+    "错误"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10932,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "每个人的工作性质不同，对时间管理的需求会不一样，这个说法正确吗？",
+   "options": [
+    "正确·",
+    "错误"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10934,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "我们可以强制要求与会人员做好准备，避免浪费不必要的时间",
+   "options": [
+    "正确·",
+    "错误"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10935,
+   "category": "时间管理与效率提升",
+   "module": "soft",
+   "type": "single",
+   "question": "可以通过化整为零的方法，降低问题困难性评估。",
+   "options": [
+    "正确·",
+    "错误"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10937,
+   "category": "谈判技巧新思路训练",
+   "module": "negotiation",
+   "type": "single",
+   "question": "谈判新思路的好处不包括下列哪一项？",
+   "options": [
+    "脱颖而出",
+    "赢得尊重",
+    "创新商业模式",
+    "颠覆谈判效益"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10938,
+   "category": "谈判技巧新思路训练",
+   "module": "negotiation",
+   "type": "single",
+   "question": "下列哪一项属于协商式开局的做法",
+   "options": [
+    "使用外交礼节性语言",
+    "真诚、热情地畅谈双方过去的友好合作关系",
+    "坦率地陈述己方的观点以及对对方的期望",
+    "坦率地表明己方存在的弱"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10939,
+   "category": "谈判技巧新思路训练",
+   "module": "negotiation",
+   "type": "single",
+   "question": "谈判准备阶段，下列哪一项不属于准备工作的内容：",
+   "options": [
+    "收集谈判信息",
+    "确定谈判目标",
+    "整理好个人形象",
+    "制定谈判策略重点、设计或协商谈判程序"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10940,
+   "category": "谈判技巧新思路训练",
+   "module": "negotiation",
+   "type": "multiple",
+   "question": "慎重式开局的做法包括下列哪些内容？(多选）",
+   "options": [
+    "选择中性话题",
+    "有理、有利、有节，要切中问题要害",
+    "不急于拉近关系",
+    "用礼貌性的提问来考察对方的态度、想法"
+   ],
+   "answer": [
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10943,
+   "category": "跨智能沟通与协作技巧",
+   "module": "negotiation",
+   "type": "multiple",
+   "question": "通过跨职能协作能够达到的目标包括？（多选）",
+   "options": [
+    "增强市场竞争力",
+    "提高顾客满意度",
+    "保证战略目标实现",
+    "缩短生产周期"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10944,
+   "category": "跨智能沟通与协作技巧",
+   "module": "negotiation",
+   "type": "multiple",
+   "question": "一般在职场中哪些人群容易产生领地意识？（多选）",
+   "options": [
+    "没有信心员工",
+    "经验丰富员工",
+    "职场空降兵",
+    "新提升员工"
+   ],
+   "answer": [
+    0,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10945,
+   "category": "跨智能沟通与协作技巧",
+   "module": "negotiation",
+   "type": "multiple",
+   "question": "领地意识对工作的危害性包括？（多选）",
+   "options": [
+    "留下不好合作印象",
+    "导致工作良性循环",
+    "导致工作恶性循环",
+    "影响每天工作心情"
+   ],
+   "answer": [
+    0,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10946,
+   "category": "跨智能沟通与协作技巧",
+   "module": "negotiation",
+   "type": "multiple",
+   "question": "跨职能协作对企业的必要性包括？（多选）",
+   "options": [
+    "降低企业运营风险的需要",
+    "降低企业内部成本的需要",
+    "提升企业内部成本的需要",
+    "赢得企业差别化竞争的需要"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10941,
+   "category": "销售专家的软技能",
+   "module": "sales",
+   "type": "multiple",
+   "question": "必备的销售软技能包括哪些？",
+   "options": [
+    "与客户建立联系",
+    "高情商进行销售",
+    "学会聆听做个好听众",
+    "协作和沟通"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 10942,
+   "category": "销售专家的软技能",
+   "module": "sales",
+   "type": "multiple",
+   "question": "如何快速建立客户联系的要点有哪些？",
+   "options": [
+    "放弃销售话术",
+    "了解客户情况",
+    "不要总是想着达成交易",
+    "不要不好意思向客户推荐别人"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16174,
+   "category": "EA数字化SCADA",
+   "module": "digital",
+   "type": "single",
+   "question": "SCADA 指的是什么系统?",
+   "options": [
+    "能源管理系统",
+    "资产管理系统",
+    "电力监控系统",
+    "电能质量管理系统"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16175,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "single",
+   "question": "ISED是一款侧重于________的软件",
+   "options": [
+    "保护表计调试",
+    "后台SCADA",
+    "综合能源系统规划",
+    "能源管理系统"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16176,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "multiple",
+   "question": "ISED软件的主要特点________",
+   "options": [
+    "软件即服务业务（SaaS）",
+    "单机版",
+    "全中文",
+    "年度订阅式"
+   ],
+   "answer": [
+    0,
+    1,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16177,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "single",
+   "question": "ISED主要竞争对手________",
+   "options": [
+    "ABB",
+    "施耐德",
+    "南瑞",
+    "HOMER"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16178,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "single",
+   "question": "ISED单个账号一年的大概费用________ (RMB)",
+   "options": [
+    "1万以下",
+    "1-5万",
+    "10-20万",
+    "25万以上"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16179,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "multiple",
+   "question": "ISED的目标客户群________",
+   "options": [
+    "各类设计院",
+    "综合能源公司",
+    "能源电力企业",
+    "相关高校和科研机构"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16180,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "single",
+   "question": "ISED的免费试用期为________",
+   "options": [
+    "7天",
+    "14天",
+    "1个月",
+    "45天"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16181,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "multiple",
+   "question": "ISED目前主要聚焦场景________",
+   "options": [
+    "光储充系统",
+    "多能互补综合能源系统",
+    "风光制氢",
+    "水力发电"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16182,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "single",
+   "question": "ISED主要解决客户应用场景中的挑战________",
+   "options": [
+    "分布式能源系统优化设计",
+    "数据采集和碳足迹分析",
+    "设备可靠性降低",
+    "设备管理种类繁多"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16183,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "multiple",
+   "question": "ISED 能实现以下__________分析计算功能",
+   "options": [
+    "能源（电、热，冷，蒸汽）平衡",
+    "能源投资回报率",
+    "电力系统潮流"
+   ],
+   "answer": [
+    0,
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16184,
+   "category": "EA数字化ISED",
+   "module": "digital",
+   "type": "multiple",
+   "question": "ISED 支持以下_________版本(多选)",
+   "options": [
+    "Small(电力版)",
+    "Medium标准版（电力+热能）",
+    "Large高级版（电力+热能+氢能）",
+    "New energy 新能源版(光伏+风电)"
+   ],
+   "answer": [
+    0,
+    1,
+    2
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16773,
+   "category": "武功秘籍",
+   "module": "sales",
+   "type": "multiple",
+   "question": "销售武功秘籍的致胜招式共分几个模块？",
+   "options": [
+    "了解项目及客户",
+    "关系发展",
+    "价值主张",
+    "赢力评估",
+    "冲刺赢单"
+   ],
+   "answer": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  },
+  {
+   "id": 16774,
+   "category": "武功秘籍",
+   "module": "sales",
+   "type": "single",
+   "question": "销售武功秘籍的核心价值在于？",
+   "options": [
+    "确保项目准时交付",
+    "提高项目赢率",
+    "促进大客户发展",
+    "加强生态圈建设"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": null,
+   "shuffle": true,
+   "score": 1,
+   "difficulty": 1
+  }
+ ]
+}

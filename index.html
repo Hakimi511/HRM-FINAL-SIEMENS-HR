@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>西门子 SI 渠道销售培训考核平台</title>
+  <meta name="description" content="西门子 Smart Infrastructure 渠道销售（SI）培训考核学习平台 —— 知识考核、产品资料库、错题精练" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- 顶部品牌导航 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#/home" aria-label="西门子 SI 培训平台首页">
+        <span class="brand-logo">SIEMENS</span>
+        <span class="brand-sep"></span>
+        <span class="brand-sub">SI 渠道销售培训考核平台</span>
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="#/home"    data-route="home">首页</a>
+        <a href="#/exam"    data-route="exam">考核中心</a>
+        <a href="#/library" data-route="library">学习资料库</a>
+        <a href="#/records" data-route="records">我的成绩</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="菜单">☰</button>
+    </div>
+  </header>
+
+  <!-- 主内容区，由 JS 渲染 -->
+  <main id="app" class="app-main"><div class="loading">加载中…</div></main>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <strong>SIEMENS</strong> Smart Infrastructure ·
+        渠道销售（SI）培训考核学习平台
+      </div>
+      <div class="footer-meta">
+        内部培训用途 · 题库 136 题 / 25 分类 · 学习资料 20 份 ·
+        <span id="footer-year"></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PDF 预览弹窗 -->
+  <div class="modal" id="pdf-modal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <div class="modal-head">
+        <span class="modal-title" id="pdf-title">资料预览</span>
+        <div class="modal-actions">
+          <a class="btn btn-ghost btn-sm" id="pdf-newtab" target="_blank" rel="noopener">新窗口打开</a>
+          <a class="btn btn-ghost btn-sm" id="pdf-download" download>下载</a>
+          <button class="btn btn-ghost btn-sm" data-close-modal>关闭 ✕</button>
+        </div>
+      </div>
+      <iframe class="modal-frame" id="pdf-frame" title="PDF 预览" src="about:blank"></iframe>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

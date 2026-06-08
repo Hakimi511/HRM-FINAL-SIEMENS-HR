@@ -1,0 +1,222 @@
+{
+ "meta": {
+  "title": "西门子 SI 产品学习资料库",
+  "totalLines": 2,
+  "totalCategories": 12,
+  "totalFiles": 20
+ },
+ "lines": [
+  {
+   "id": "ea",
+   "name": "EA 产品线（电气化与自动化 · 中压）",
+   "icon": "⚡",
+   "desc": "中压开关设备、保护测控与配电数字化",
+   "categories": [
+    {
+     "id": "ea-ais",
+     "name": "EA AIS 基础",
+     "code": "AIS",
+     "desc": "空气绝缘开关设备 (AIS)",
+     "files": [
+      {
+       "title": "NXAirS 中文版",
+       "file": "materials/ea/ea-ais-nxairs.pdf",
+       "sizeMB": 5.58
+      }
+     ]
+    },
+    {
+     "id": "ea-cs",
+     "name": "EA CS 基础",
+     "code": "CS",
+     "desc": "业务服务方案与销售政策",
+     "files": [
+      {
+       "title": "EA CS业务服务方案和销售政策",
+       "file": "materials/ea/ea-cs-ea-cs.pdf",
+       "sizeMB": 9.68
+      }
+     ]
+    },
+    {
+     "id": "ea-gis",
+     "name": "EA GIS 基础",
+     "code": "GIS",
+     "desc": "气体绝缘开关设备 (GIS)",
+     "files": [
+      {
+       "title": "8DAB 12",
+       "file": "materials/ea/ea-gis-8dab-12.pdf",
+       "sizeMB": 3.53
+      },
+      {
+       "title": "8DAB",
+       "file": "materials/ea/ea-gis-8dab.pdf",
+       "sizeMB": 2.86
+      },
+      {
+       "title": "8DJH 12",
+       "file": "materials/ea/ea-gis-8djh-12.pdf",
+       "sizeMB": 7.94
+      },
+      {
+       "title": "8DJH",
+       "file": "materials/ea/ea-gis-8djh.pdf",
+       "sizeMB": 4.37
+      },
+      {
+       "title": "NXPLUS C -GIS",
+       "file": "materials/ea/ea-gis-nxplus-c-gis.pdf",
+       "sizeMB": 3.03
+      },
+      {
+       "title": "NXPLUS C 24",
+       "file": "materials/ea/ea-gis-nxplus-c-24.pdf",
+       "sizeMB": 3.25
+      }
+     ]
+    },
+    {
+     "id": "ea-protection",
+     "name": "EA 保护 基础",
+     "code": "保护",
+     "desc": "保护与测控装置",
+     "files": [
+      {
+       "title": "6MD685",
+       "file": "materials/ea/ea-protection-6md685.pdf",
+       "sizeMB": 3.66
+      },
+      {
+       "title": "7SJ686",
+       "file": "materials/ea/ea-protection-7sj686.pdf",
+       "sizeMB": 3.15
+      }
+     ]
+    },
+    {
+     "id": "ea-digital",
+     "name": "EA 数字化 基础",
+     "code": "数字化",
+     "desc": "智能配电数字化解决方案",
+     "files": [
+      {
+       "title": "EA智能配电解决方案_Sales",
+       "file": "materials/ea/ea-digital-ea-sales.pdf",
+       "sizeMB": 8.94
+      }
+     ]
+    },
+    {
+     "id": "ea-vcb",
+     "name": "VCB 基础",
+     "code": "VCB",
+     "desc": "真空断路器 (VCB)",
+     "files": [
+      {
+       "title": "西门子智能化真空断路器",
+       "file": "materials/ea/ea-vcb-1.pdf",
+       "sizeMB": 2.51
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ep",
+   "name": "EP 产品线（电气产品 · 低压）",
+   "icon": "🔋",
+   "desc": "低压断路器、成套设备与电柜数字化",
+   "categories": [
+    {
+     "id": "ep-8pt",
+     "name": "8PT 基础",
+     "code": "8PT",
+     "desc": "Sivacon 8PT 低压成套开关设备",
+     "files": [
+      {
+       "title": "Sivacon 8PT",
+       "file": "materials/ep/ep-8pt-sivacon-8pt.pdf",
+       "sizeMB": 1.81
+      }
+     ]
+    },
+    {
+     "id": "ep-acb",
+     "name": "ACB 基础",
+     "code": "ACB",
+     "desc": "万能式空气断路器 (ACB)",
+     "files": [
+      {
+       "title": "ACB",
+       "file": "materials/ep/ep-acb-acb.pdf",
+       "sizeMB": 5.89
+      }
+     ]
+    },
+    {
+     "id": "ep-atse-lbs",
+     "name": "ATSE LBS 基础",
+     "code": "ATSE",
+     "desc": "双电源转换开关与负荷开关",
+     "files": [
+      {
+       "title": "3KC2_3KC7",
+       "file": "materials/ep/ep-atse-lbs-3kc2-3kc7.pdf",
+       "sizeMB": 1.13
+      },
+      {
+       "title": "双电源产品介绍",
+       "file": "materials/ep/ep-atse-lbs-2.pdf",
+       "sizeMB": 2.36
+      }
+     ]
+    },
+    {
+     "id": "ep-digital",
+     "name": "Digital 基础",
+     "code": "Digital",
+     "desc": "Panel Manager 数字化电柜管家",
+     "files": [
+      {
+       "title": "Panel Manager Pro Sales slides",
+       "file": "materials/ep/ep-digital-panel-manager-pro-sales-slides.pdf",
+       "sizeMB": 4.4
+      }
+     ]
+    },
+    {
+     "id": "ep-mcb-rcd",
+     "name": "MCB RCD基础",
+     "code": "MCB",
+     "desc": "微型断路器与剩余电流保护",
+     "files": [
+      {
+       "title": "三箱产品及应用场景案例介绍",
+       "file": "materials/ep/ep-mcb-rcd-1.pdf",
+       "sizeMB": 8.03
+      }
+     ]
+    },
+    {
+     "id": "ep-mccb",
+     "name": "MCCB 基础",
+     "code": "MCCB",
+     "desc": "塑壳断路器 (MCCB)",
+     "files": [
+      {
+       "title": "3VA&3VM",
+       "file": "materials/ep/ep-mccb-3va-3vm.pdf",
+       "sizeMB": 2.89
+      },
+      {
+       "title": "3VC",
+       "file": "materials/ep/ep-mccb-3vc.pdf",
+       "sizeMB": 2.1
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
