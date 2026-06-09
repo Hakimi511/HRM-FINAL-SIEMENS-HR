@@ -2,14 +2,14 @@
 // 首页 / 仪表盘
 // =========================================================================
 import { loadQuestions, loadMaterials, questionsByModule } from './data.js';
-import { getResults, getWrongIds, readCount } from './store.js';
+import { getMyResults, getWrongIds, readCount } from './store.js';
 import { startExam } from './exam.js';
 import { h, fmtDate } from './util.js';
 
 export async function renderHome(app) {
   const qd = await loadQuestions();
   const md = await loadMaterials();
-  const results = getResults();
+  const results = getMyResults();
   const wrongN = getWrongIds().length;
 
   app.innerHTML = '';

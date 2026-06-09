@@ -2,7 +2,7 @@
 // 考核引擎：组卷设置 / 答题运行 / 判分结果
 // =========================================================================
 import { loadQuestions, questionsById } from './data.js';
-import { addResult, addWrong, removeWrong, getWrongIds } from './store.js';
+import { addResult, addWrong, removeWrong, getWrongIds, getProfile } from './store.js';
 import { h, esc, shuffle, sampleN, letter, fmtClock, arrEq, scrollTop } from './util.js';
 
 const PASS_RATE = 60;              // 合格线
@@ -359,9 +359,15 @@ function submitExam() {
   const grade = rate >= 90 ? '优秀' : rate >= 80 ? '良好' : rate >= PASS_RATE ? '合格' : '不合格';
   const timeSpent = elapsed();
 
-  const result = { ts: Date.now(), title: st.title, total, correct, rate, pass, grade, timeSpent, mode: st.mode, review };
+  // 学员身份 + 逐题明细（供 HR 后台做部门/薄弱点/难题分析）
+  const prof = getProfile() || {};
+  const detail = review.map(({ q, ok }) => ({ id: q.id, category: q.category, module: q.module, correct: ok }));
+  const ts = Date.now();
+  const id = 'r' + ts + '-' + Math.random().toString(36).slice(2, 7);
+
+  const result = { id, ts, title: st.title, total, correct, rate, pass, grade, timeSpent, mode: st.mode, review };
   st.result = result;
-  addResult({ ts: result.ts, title: result.title, total, correct, rate, pass, grade, timeSpent });
+  addResult({ id, ts, name: prof.name || '', dept: prof.dept || '', empId: prof.empId || '', title: st.title, total, correct, rate, pass, grade, timeSpent, mode: st.mode, detail });
 
   location.hash = '#/exam/result';
 }

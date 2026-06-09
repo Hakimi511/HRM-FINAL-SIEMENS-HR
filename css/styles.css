@@ -333,6 +333,96 @@ img { max-width: 100%; }
 .breadcrumb { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
 .breadcrumb a { color: var(--petrol-dark); }
 
+/* ============================ 身份芯片 / 导航 ============================ */
+.profile-chip {
+  margin-left: 8px; background: rgba(255,255,255,.10); color: #fff; border: 1px solid rgba(255,255,255,.22);
+  padding: 7px 14px; border-radius: 999px; font: inherit; font-size: 13px; font-weight: 700; cursor: pointer;
+  white-space: nowrap; transition: .15s;
+}
+.profile-chip:hover { background: rgba(255,255,255,.2); }
+.profile-chip.is-admin { background: rgba(236,102,2,.22); border-color: rgba(236,102,2,.5); }
+.main-nav a.nav-admin { color: var(--green-bright); }
+.main-nav a.nav-admin.active { background: rgba(236,102,2,.22); box-shadow: inset 0 -2px 0 var(--accent); }
+
+/* ============================ 小弹窗 / 表单 ============================ */
+.modal-mini { position: relative; z-index: 2; width: min(440px, 92vw); }
+.id-card, .gate-card {
+  background: #fff; border-radius: 16px; box-shadow: var(--shadow-lg); padding: 28px;
+}
+.id-card h3 { font-size: 20px; }
+.fld-row { display: block; margin-bottom: 14px; }
+.fld-label { display: block; font-size: 13px; font-weight: 700; color: var(--ink-2); margin-bottom: 6px; }
+.fld {
+  width: 100%; padding: 11px 14px; border: 1.5px solid var(--line); border-radius: 10px; font: inherit;
+  background: #fff; color: var(--ink);
+}
+.fld:focus { outline: none; border-color: var(--petrol); box-shadow: 0 0 0 3px rgba(0,153,153,.12); }
+select.fld { cursor: pointer; }
+
+/* ============================ HR 后台门控 ============================ */
+.gate-wrap { display: grid; place-items: center; padding: 40px 0; }
+.gate-card { width: min(420px, 94vw); text-align: center; }
+.gate-ic { font-size: 44px; }
+.gate-card .fld-row { text-align: left; margin-top: 14px; }
+.gate-hint { font-size: 12.5px; color: var(--muted); margin: 12px 0 4px; }
+.gate-hint code { background: var(--bg-soft); padding: 2px 8px; border-radius: 6px; color: var(--accent); font-weight: 700; }
+
+/* ============================ HR 后台仪表盘 ============================ */
+.admin-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; margin-bottom: 18px; }
+.toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 14px 18px; margin-bottom: 22px; }
+.toolbar-label { font-weight: 700; color: var(--deep); margin-right: 4px; }
+.admin-grid { align-items: stretch; }
+.panel { display: flex; flex-direction: column; }
+.panel-head { margin-bottom: 14px; }
+.panel-head h3 { margin: 0; font-size: 17px; }
+.panel-sub { font-size: 12.5px; color: var(--muted); }
+
+/* 条形图 */
+.bars { display: flex; flex-direction: column; gap: 12px; }
+.bar-row { display: grid; grid-template-columns: 150px 1fr 52px; align-items: center; gap: 12px; }
+.bar-label { font-size: 13.5px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bar-sub { display: block; font-size: 11px; color: var(--muted); font-weight: 400; }
+.bar-track { background: var(--bg-soft); border-radius: 999px; height: 14px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--petrol), var(--green)); transition: width .5s ease; }
+.bar-fill.danger { background: linear-gradient(90deg, #d9772e, var(--accent)); }
+.bar-val { text-align: right; font-weight: 800; font-size: 14px; color: var(--deep); font-variant-numeric: tabular-nums; }
+
+/* 环形图 */
+.ring-wrap { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.ring { width: 132px; height: 132px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.ring-hole { width: 96px; height: 96px; border-radius: 50%; background: #fff; display: grid; place-items: center; text-align: center; box-shadow: inset 0 0 0 1px var(--line); }
+.ring-num { font-size: 28px; font-weight: 800; color: var(--petrol-darker); line-height: 1; }
+.ring-lbl { font-size: 12px; color: var(--muted); }
+.ring-legend { display: flex; flex-direction: column; gap: 6px; }
+.lg-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-2); }
+.lg-item i { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
+
+/* 正确率标签 */
+.rate-tag { display: inline-block; padding: 2px 9px; border-radius: 999px; font-weight: 800; font-size: 12.5px; }
+.rate-tag.ok { background: var(--ok-bg); color: var(--ok); }
+.rate-tag.mid { background: #fff4e0; color: var(--warn); }
+.rate-tag.bad { background: var(--err-bg); color: var(--err); }
+
+/* 难题列表 */
+.hard-list { display: flex; flex-direction: column; gap: 10px; }
+.hard-item { display: flex; align-items: center; gap: 12px; }
+.hard-rank { flex: none; width: 24px; height: 24px; border-radius: 7px; background: var(--deep); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 12px; }
+.hard-q { font-size: 13.5px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* 排行榜 */
+.lead-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.lead-card { text-align: center; padding: 16px 10px; border: 1px solid var(--line); border-radius: 12px; background: linear-gradient(180deg, #fff, #fafdfd); }
+.lead-medal { font-size: 24px; font-weight: 800; color: var(--petrol-dark); }
+.lead-medal.m0 { filter: drop-shadow(0 2px 4px rgba(0,0,0,.15)); }
+.lead-name { font-weight: 700; margin-top: 4px; }
+.lead-score { font-size: 20px; font-weight: 800; color: var(--petrol-darker); margin-top: 4px; }
+
+/* 培训建议 / 提示条 */
+.insight { margin-top: 14px; padding: 12px 16px; border-radius: 10px; background: #fff6ec; border: 1px solid #ffd9b0; font-size: 13.5px; color: #8a4b00; }
+.insight b { color: var(--accent); }
+
+.table-scroll { overflow-x: auto; }
+
 /* ----------------------------- 响应式 ----------------------------- */
 @media (max-width: 880px) {
   .main-nav { position: absolute; top: var(--header-h); left: 0; right: 0; flex-direction: column; gap: 0;
@@ -347,6 +437,9 @@ img { max-width: 100%; }
   .kpi-row { grid-template-columns: repeat(2,1fr); }
   .hero { padding: 32px 24px; }
   .hero h1 { font-size: 26px; }
+  .lead-row { grid-template-columns: repeat(2,1fr); }
+  .bar-row { grid-template-columns: 104px 1fr 44px; gap: 8px; }
+  .profile-chip { font-size: 12px; padding: 6px 10px; }
 }
 @media (max-width: 520px) {
   .brand-sub { display: none; }

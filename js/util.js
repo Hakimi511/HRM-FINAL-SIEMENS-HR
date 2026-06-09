@@ -76,3 +76,30 @@ export function arrEq(a, b) {
 
 /** 滚动到顶部 */
 export function scrollTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+/** 触发浏览器下载 */
+export function downloadFile(filename, content, mime = 'application/octet-stream') {
+  const blob = new Blob([content], { type: mime + ';charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 200);
+}
+export function downloadJSON(filename, obj) {
+  downloadFile(filename, JSON.stringify(obj, null, 2), 'application/json');
+}
+/** 数组对象 -> CSV（含 BOM，Excel 中文不乱码） */
+export function toCSV(rows, headers) {
+  const cols = headers || (rows[0] ? Object.keys(rows[0]) : []);
+  const escape = v => {
+    const s = v == null ? '' : String(v);
+    return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  };
+  const head = cols.map(c => escape(c.label || c)).join(',');
+  const body = rows.map(r => cols.map(c => escape(r[c.key || c])).join(',')).join('\n');
+  return '﻿' + head + '\n' + body;
+}
+
+/** 平均值（百分比，四舍五入） */
+export function avg(nums) { return nums.length ? Math.round(nums.reduce((a, b) => a + b, 0) / nums.length) : 0; }

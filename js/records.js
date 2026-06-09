@@ -1,19 +1,23 @@
 // =========================================================================
 // 我的成绩：KPI 概览 + 历史成绩 + 错题本管理
 // =========================================================================
-import { getResults, clearResults, getWrongIds, clearWrong, readCount } from './store.js';
+import { getMyResults, getResults, clearResults, getWrongIds, clearWrong, readCount, getProfile, exportResults } from './store.js';
 import { startExam } from './exam.js';
-import { h, fmtDate, fmtClock } from './util.js';
+import { h, fmtDate, fmtClock, downloadJSON } from './util.js';
 
 export async function renderRecords(app) {
-  const results = getResults();
+  const prof = getProfile();
+  const results = getMyResults();
   const wrongN = getWrongIds().length;
   app.innerHTML = '';
 
   app.appendChild(h('div.section', null,
     h('div.eyebrow', null, '学习档案'),
-    h('h2', null, '我的成绩'),
-    h('p.text-muted', null, '记录保存在本浏览器本地（localStorage），用于追踪你的学习与考核进度。'),
+    h('h2', null, prof && prof.name ? `${prof.name} 的成绩` : '我的成绩'),
+    h('div', { style: 'display:flex;align-items:center;gap:10px;flex-wrap:wrap' },
+      prof && prof.name ? h('span.badge.badge-petrol', null, `👤 ${prof.name} · ${prof.dept || '未设部门'}`) : null,
+      h('p.text-muted', { style: 'margin:0' }, '记录保存在本浏览器本地，可导出后交给 HR 汇总分析。'),
+    ),
   ));
 
   // KPI
@@ -44,7 +48,15 @@ export async function renderRecords(app) {
   // 历史成绩
   app.appendChild(h('div.section-head', null,
     h('h2', null, '历史考核记录'),
-    results.length ? h('button.btn.btn-ghost.btn-sm', { onclick: () => { if (confirm('确定清空全部成绩记录？')) { clearResults(); renderRecords(app); } } }, '清空记录') : null,
+    h('div.btn-row', null,
+      results.length ? h('button.btn.btn-ghost.btn-sm', {
+        onclick: () => {
+          const name = (prof && prof.name) ? prof.name : '我的';
+          downloadJSON(`成绩导出_${name}_${new Date().toISOString().slice(0, 10)}.json`, exportResults(true));
+        },
+      }, '⬇ 导出我的成绩') : null,
+      results.length ? h('button.btn.btn-ghost.btn-sm', { onclick: () => { if (confirm('确定清空全部成绩记录？')) { clearResults(); renderRecords(app); } } }, '清空记录') : null,
+    ),
   ));
 
   if (!results.length) {
