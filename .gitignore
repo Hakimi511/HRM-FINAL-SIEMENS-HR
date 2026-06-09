@@ -14,3 +14,8 @@ desktop.ini
 ~$*
 .vscode/
 .idea/
+
+# 文档/截图中间产物（保留本地，不进 web 仓库）
+_shot.html
+shots/
+*.docx

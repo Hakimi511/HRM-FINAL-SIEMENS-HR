@@ -82,9 +82,10 @@ export async function renderExamSetup(app) {
     wrap.innerHTML = '';
     const pool = poolFor();
     const poolN = Array.isArray(pool) ? pool.length : 0;
+    let sn = 0; const S = t => `${++sn} · ${t}`;   // 动态连续步骤编号
 
     // 1) 范围
-    wrap.appendChild(group('1 · 选择考核范围',
+    wrap.appendChild(group(S('选择考核范围'),
       h('div.choice-grid', null,
         scopeCard('all', '🎯 综合题库', `${qd.questions.length} 题 · 全部分类`),
         scopeCard('module', '🧩 按能力模块', `${qd.modules.length} 个模块专项`),
@@ -94,7 +95,7 @@ export async function renderExamSetup(app) {
 
     // 2) 动态二级选择
     if (state.scope === 'module') {
-      wrap.appendChild(group('2 · 选择模块',
+      wrap.appendChild(group(S('选择模块'),
         h('div.choice-grid', null, ...qd.modules.map(m => {
           const n = qd.questions.filter(q => q.module === m.id).length;
           return pickCard(state.moduleId === m.id, `${m.icon} ${m.name}`, `${n} 题`, () => { state.moduleId = m.id; render(); });
@@ -107,9 +108,9 @@ export async function renderExamSetup(app) {
         h('div.eyebrow', { style: 'margin-bottom:8px' }, `${m.icon} ${m.name}`),
         h('div.choice-grid', null, ...cats.map(c =>
           pickCard(state.category === c.name, c.name, `${c.count} 题`, () => { state.category = c.name; render(); })))));
-      wrap.appendChild(group('2 · 选择分类', ...blocks));
+      wrap.appendChild(group(S('选择分类'), ...blocks));
     } else if (state.scope === 'wrong') {
-      wrap.appendChild(group('2 · 错题本',
+      wrap.appendChild(group(S('错题本'),
         h('div.card', { style: 'background:#f3f9f9;border-color:#d5ecec' },
           wrongN
             ? h('div', null, h('b', null, `共 ${wrongN} 道错题`), h('span.text-muted', null, '　将随机抽取下方设定的题量进行重练，答对后自动移出错题本。'))
@@ -119,7 +120,7 @@ export async function renderExamSetup(app) {
     // 3) 题量
     const counts = [10, 20, 30].filter(n => n < poolN);
     counts.push('all');
-    wrap.appendChild(group('3 · 题量',
+    wrap.appendChild(group(S('题量'),
       h('div.seg', null, ...counts.map(c => {
         const label = c === 'all' ? `全部 (${poolN})` : `${c} 题`;
         const active = (c === 'all' && state.count === 'all') || state.count === c;
@@ -127,14 +128,14 @@ export async function renderExamSetup(app) {
       }))));
 
     // 4) 模式
-    wrap.appendChild(group('4 · 考核模式',
+    wrap.appendChild(group(S('考核模式'),
       h('div.choice-grid', null,
         pickCard(state.mode === 'exam', '📝 考试模式', '交卷后统一判分与解析', () => { state.mode = 'exam'; render(); }),
         pickCard(state.mode === 'practice', '💡 练习模式', '每题作答后即时显示解析', () => { state.mode = 'practice'; render(); }),
       )));
 
     // 5) 计时
-    wrap.appendChild(group('5 · 计时',
+    wrap.appendChild(group(S('计时'),
       h('div.seg', null,
         h('button', { class: state.timed ? 'active' : '', onclick: () => { state.timed = true; render(); } }, '⏱ 开启计时'),
         h('button', { class: !state.timed ? 'active' : '', onclick: () => { state.timed = false; render(); } }, '关闭计时'),
