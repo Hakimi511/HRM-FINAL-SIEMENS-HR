@@ -1,8 +1,8 @@
-# 西门子 SI 渠道销售培训考核学习平台
+# 模拟西门子 SI 渠道销售培训考核学习平台
 
-> Siemens Smart Infrastructure (SI) 渠道销售培训考核 · 一站式学习与考核 Web 平台
+> 模拟制作的Siemens Smart Infrastructure (SI) 渠道销售培训考核 · 一站式学习与考核 Web 平台
 
-面向西门子 **Smart Infrastructure 渠道销售（SI Channel Sales）** 伙伴打造的纯前端学习考核平台：把「**知识考核**」与「**产品资料学习**」合二为一，以考促学、查漏补缺。
+模拟制作的面向西门子 **Smart Infrastructure 渠道销售（SI Channel Sales）** 伙伴打造的纯前端学习考核平台：把「**知识考核**」与「**产品资料学习**」合二为一，以考促学、查漏补缺。
 
 ---
 
