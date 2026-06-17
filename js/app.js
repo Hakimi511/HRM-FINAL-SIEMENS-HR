@@ -95,7 +95,7 @@ function showModal(panel, { closable = true } = {}) {
 export function openIdentityModal(force = false) {
   const p = getProfile() || { name: '', dept: DEPARTMENTS[0], empId: '' };
   const nameI = h('input.fld', { type: 'text', value: p.name || '', placeholder: '请输入姓名', maxlength: '20' });
-  const idI = h('input.fld', { type: 'text', value: p.empId || '', placeholder: '请输入工号（必填，格式不限）', maxlength: '30' });
+  const idI = h('input.fld', { type: 'text', value: p.empId || '', placeholder: '请输入工号', maxlength: '30' });
   const deptS = h('select.fld', null, ...DEPARTMENTS.map(d => h('option', { value: d, selected: d === p.dept ? '' : null }, d)));
   const msg = h('div', { style: 'color:var(--err);font-size:12.5px;height:16px;margin:2px 0 2px' });
 
@@ -103,7 +103,7 @@ export function openIdentityModal(force = false) {
     const name = nameI.value.trim();
     const empId = idI.value.trim();
     if (!name) { msg.textContent = '请填写姓名'; nameI.focus(); return; }
-    if (!empId) { msg.textContent = '请填写工号（必填）'; idI.focus(); return; }
+    if (!empId) { msg.textContent = '请填写工号'; idI.focus(); return; }
     setProfile({ name, dept: deptS.value, empId });
     close(); refreshChip(); router();
   };
@@ -112,9 +112,9 @@ export function openIdentityModal(force = false) {
 
   const panel = h('div.id-card', null,
     h('h3', null, '👤 学员身份登记'),
-    h('p.text-muted', { style: 'margin-top:-4px' }, '请填写姓名与工号。成绩将按工号归档，便于 HR 精准识别学员（避免重名）。'),
+    h('p.text-muted', { style: 'margin-top:-4px' }, '请填写姓名与工号，登记后即可开始学习与考核。'),
     field('姓名', nameI),
-    field('工号（必填）', idI),
+    field('工号', idI),
     field('所属销售区域', deptS),
     msg,
     h('div.btn-row', { style: 'margin-top:6px' },
