@@ -47,6 +47,7 @@ export async function renderAdmin(app) {
       : h('button.btn.btn-sm', { onclick: () => { seedDemo(qd); renderAdmin(app); } }, '✨ 载入演示数据'),
     h('button.btn.btn-ghost.btn-sm', { onclick: () => fileInput.click() }, '⬆ 导入学员成绩'),
     h('button.btn.btn-ghost.btn-sm', { onclick: () => exportSummaryCSV(byTrainee(results), qd) }, '⬇ 导出员工汇总(CSV)'),
+    h('button.btn.btn-ghost.btn-sm', { onclick: () => exportDeptCSV(byDept(results), results, qd) }, '⬇ 导出区域诊断(CSV)'),
     h('button.btn.btn-ghost.btn-sm', { onclick: () => exportCSV(results) }, '⬇ 导出逐次成绩(CSV)'),
     h('button.btn.btn-ghost.btn-sm', { onclick: () => downloadJSON(`SI培训成绩备份_${today()}.json`, exportResults(false)) }, '⬇ 导出 JSON 备份'),
     results.length ? h('button.btn.btn-ghost.btn-sm', { onclick: () => { if (confirm('确定清空全部成绩数据（含导入与演示）？')) { clearResults(); renderAdmin(app); } } }, '清空全部') : null,
@@ -142,6 +143,38 @@ export async function renderAdmin(app) {
     ));
   }
 
+  // ---------- 区域学习诊断（按大区聚合，点击查看详情） ----------
+  app.appendChild(h('div.section-head', { style: 'margin-top:30px' },
+    h('h3', { style: 'margin:0' }, '📍 区域学习诊断'),
+    h('span.sub', null, `共 ${depts.length} 个区域 · 点击任一行查看该区域的薄弱点与培训建议`),
+  ));
+  app.appendChild(h('div.table-scroll', null,
+    h('table.record-table', null,
+      h('thead', null, h('tr', null,
+        h('th', null, '排名'), h('th', null, '销售区域'), h('th', null, '学员数'),
+        h('th', null, '考核次数'), h('th', null, '平均正确率'), h('th', null, '合格率'),
+        h('th', null, '最薄弱能力模块'), h('th', null, '最近活跃'), h('th', null, '操作'))),
+      h('tbody', null, ...depts.map((d, i) => {
+        const det = deptDetail(results, d.dept, qd);
+        const weak = det.weakMod;
+        return h('tr', { class: 'row-click', onclick: () => showDeptDetail(det, qd) },
+          h('td', null, String(i + 1)),
+          h('td', { style: 'font-weight:700;color:var(--petrol-darker)' }, esc(d.dept)),
+          h('td', null, String(d.people)),
+          h('td', null, String(d.exams)),
+          h('td', null, h('span', { class: 'rate-tag ' + rateCls(d.avg) }, d.avg + '%')),
+          h('td', null, h('span', { class: 'rate-tag ' + rateCls(d.passRate) }, d.passRate + '%')),
+          h('td', null, weak
+            ? h('span', { class: 'badge ' + (weak.rate < 70 ? 'badge-err' : 'badge-petrol') },
+                `${weak.icon} ${weak.name} ${weak.rate}%`)
+            : '—'),
+          h('td', null, d.lastTs ? fmtDate(d.lastTs) : '—'),
+          h('td', null, h('button.btn.btn-ghost.btn-sm', { onclick: (e) => { e.stopPropagation(); showDeptDetail(det, qd); } }, '查看详情')),
+        );
+      })),
+    ),
+  ));
+
   // ---------- 学员明细表（按工号汇总） ----------
   app.appendChild(h('div.section-head', { style: 'margin-top:30px' },
     h('h3', { style: 'margin:0' }, '👥 学员学习明细（按工号汇总）'),
@@ -204,15 +237,40 @@ function byDept(results) {
   const map = new Map();
   for (const r of results) {
     const d = r.dept || '(未分组)';
-    if (!map.has(d)) map.set(d, { dept: d, names: new Set(), exams: 0, rates: [], pass: 0 });
+    if (!map.has(d)) map.set(d, { dept: d, names: new Set(), empIds: new Set(), exams: 0, rates: [], pass: 0, lastTs: 0 });
     const m = map.get(d);
-    if (r.name) m.names.add(r.name);
+    if (r.empId) m.empIds.add(r.empId); else if (r.name) m.names.add(r.name);
     m.exams++; m.rates.push(r.rate || 0); if (r.pass) m.pass++;
+    if ((r.ts || 0) > m.lastTs) m.lastTs = r.ts || 0;
   }
   return [...map.values()].map(m => ({
-    dept: m.dept, people: m.names.size, exams: m.exams, avg: avg(m.rates),
+    dept: m.dept,
+    people: (m.empIds.size || m.names.size),
+    exams: m.exams, avg: avg(m.rates),
     passRate: m.exams ? Math.round(m.pass / m.exams * 100) : 0,
+    lastTs: m.lastTs,
   })).sort((a, b) => b.avg - a.avg);
+}
+
+// 计算某大区的细化诊断（薄弱模块、薄弱分类、难题、学员排名）
+function deptDetail(allResults, deptName, qd) {
+  const rs = allResults.filter(r => (r.dept || '(未分组)') === deptName);
+  const mods = moduleMastery(rs, qd);
+  const cats = categoryMastery(rs);
+  const hard = hardest(rs, qd, 2, 5);
+  const trainees = byTrainee(rs).sort((a, b) => b.avg - a.avg);
+  const passN = rs.filter(r => r.pass).length;
+  return {
+    dept: deptName,
+    exams: rs.length,
+    passN,
+    passRate: rs.length ? Math.round(passN / rs.length * 100) : 0,
+    avg: avg(rs.map(r => r.rate || 0)),
+    lastTs: rs.reduce((m, r) => Math.max(m, r.ts || 0), 0),
+    people: trainees.length,
+    mods, cats, hard, trainees,
+    weakMod: mods.length ? mods[0] : null,             // 模块按 rate 升序，第一个最弱
+  };
 }
 
 function moduleMastery(results, qd) {
@@ -342,6 +400,137 @@ function miniModal(panel) {
   const close = () => { back.remove(); document.body.style.overflow = ''; };
   back.querySelector('.modal-backdrop').addEventListener('click', close);
   return close;
+}
+
+// 大区学习诊断详情弹窗：聚合该区员工的能力模块/分类/难题/排名/培训建议
+function showDeptDetail(det, qd) {
+  const modBars = det.mods.map(m => bar(`${m.icon} ${m.name}`, m.rate, { sub: `${m.total} 次作答`, danger: m.rate < 70 }));
+  const weakMods = det.mods.filter(m => m.rate < 70);
+  const advice = weakMods.length
+    ? `建议优先针对「${weakMods.map(m => m.name).join('、')}」安排专项培训与复训`
+    : (det.mods.length ? `各能力模块整体表现良好，可考虑加强「${det.mods[0].name}」巩固训练` : '该区域暂无逐题明细数据');
+  const topGood = det.trainees.filter(t => t.exams > 0).slice(0, 3);
+  const topBad  = det.trainees.filter(t => t.exams > 0 && t.avg < 75).slice(-3).reverse();
+
+  const panel = h('div.id-card', { style: 'width:min(820px,96vw);max-height:88vh;overflow-y:auto' },
+    h('h3', { style: 'margin:0 0 4px' }, `📍 ${esc(det.dept)} · 学习诊断`),
+    h('p.text-muted', { style: 'margin:0 0 12px;font-size:13px' },
+      `学员 ${det.people} 人 ｜ 考核 ${det.exams} 次 ｜ 平均 ${det.avg}% ｜ 合格率 ${det.passRate}%（${det.passN}/${det.exams}）｜ 最近活跃 ${det.lastTs ? fmtDate(det.lastTs) : '—'}`),
+
+    h('div.kpi-row', { style: 'margin:0 0 14px' },
+      kpi(det.people, '学员'),
+      kpi(det.exams, '考核次数'),
+      kpi(det.avg + '%', '平均正确率'),
+      kpi(det.passRate + '%', '合格率'),
+    ),
+
+    h('div.panel-head', null, h('h3', { style: 'font-size:14px;margin:0' }, '🎯 能力模块掌握度'),
+      h('span.panel-sub', null, '红色为低于 70% 的薄弱模块')),
+    modBars.length ? h('div.bars', { style: 'margin:6px 0 6px' }, ...modBars)
+      : h('p.text-muted', null, '暂无逐题明细数据。'),
+    h('div.insight', { style: 'margin:6px 0 14px' }, '💡 ', advice),
+
+    h('div.grid.grid-2.admin-grid', { style: 'margin-bottom:14px' },
+      h('div', null,
+        h('div.panel-head', null, h('h3', { style: 'font-size:14px;margin:0' }, '📚 薄弱知识分类 Top 6')),
+        det.cats.length ? h('table.record-table', null,
+          h('thead', null, h('tr', null, h('th', null, '知识分类'), h('th', null, '正确率'), h('th', null, '作答数'))),
+          h('tbody', null, ...det.cats.slice(0, 6).map(c => h('tr', null,
+            h('td', null, c.category),
+            h('td', null, h('span', { class: 'rate-tag ' + rateCls(c.rate) }, c.rate + '%')),
+            h('td', null, String(c.total)),
+          ))),
+        ) : h('p.text-muted', null, '暂无分类数据。'),
+      ),
+      h('div', null,
+        h('div.panel-head', null, h('h3', { style: 'font-size:14px;margin:0' }, '🔥 本区难题 Top 5'),
+          h('span.panel-sub', null, '本大区错得最多的题（≥2次作答）')),
+        det.hard.length ? h('div.hard-list', { style: 'margin-top:6px' }, ...det.hard.map((x, i) => h('div.hard-item', null,
+          h('span.hard-rank', null, String(i + 1)),
+          h('div', { style: 'flex:1;min-width:0' },
+            h('div.hard-q', { title: x.q ? x.q.question : '' }, x.q ? x.q.question : ('题目#' + x.id)),
+            h('div.text-muted', { style: 'font-size:12px' }, `${x.category} · 作答 ${x.total} 次`),
+          ),
+          h('span', { class: 'rate-tag ' + rateCls(x.rate) }, x.rate + '%'),
+        ))) : h('p.text-muted', null, '暂无足够样本。'),
+      ),
+    ),
+
+    h('div.grid.grid-2.admin-grid', null,
+      h('div', null,
+        h('div.panel-head', null, h('h3', { style: 'font-size:14px;margin:0;color:var(--ok)' }, '🌟 表现优秀（Top 3）')),
+        topGood.length ? h('div.lead-row', { style: 'margin-top:6px' }, ...topGood.map((t, i) => h('div.lead-card', null,
+          h('div', { class: 'lead-medal m' + i }, i < 3 ? ['🥇', '🥈', '🥉'][i] : (i + 1)),
+          h('div.lead-name', null, esc(t.name)),
+          h('div.text-muted', { style: 'font-size:11.5px' }, esc(t.empId || '—')),
+          h('div.lead-score', null, t.avg + '%'),
+        ))) : h('p.text-muted', null, '—'),
+      ),
+      h('div', null,
+        h('div.panel-head', null, h('h3', { style: 'font-size:14px;margin:0;color:var(--err)' }, '⚠ 待提升（≤75%）')),
+        topBad.length ? h('div.lead-row', { style: 'margin-top:6px' }, ...topBad.map(t => h('div.lead-card', null,
+          h('div.lead-name', null, esc(t.name)),
+          h('div.text-muted', { style: 'font-size:11.5px' }, esc(t.empId || '—')),
+          h('div.lead-score', { style: 'color:var(--err)' }, t.avg + '%'),
+          t.empId ? h('button.btn.btn-ghost.btn-sm', { style: 'margin-top:6px', onclick: () => copyText(t.empId) }, '复制工号') : null,
+        ))) : h('p.text-muted', null, '本区无待提升学员，状态良好。'),
+      ),
+    ),
+
+    h('div.btn-row', { style: 'margin-top:18px;justify-content:flex-end' },
+      h('button.btn.btn-ghost', { onclick: () => exportSingleDeptCSV(det, qd) }, '⬇ 导出本区诊断'),
+      h('button.btn', { onclick: () => close() }, '关闭'),
+    ),
+  );
+  const close = miniModal(panel);
+}
+
+// 区域诊断汇总 CSV：每行一个大区 + 各模块正确率 + 最薄弱模块
+function exportDeptCSV(depts, results, qd) {
+  const rows = depts.map(d => {
+    const det = deptDetail(results, d.dept, qd);
+    const row = {
+      销售区域: d.dept, 学员数: d.people, 考核次数: d.exams,
+      平均正确率: d.avg + '%', 合格率: d.passRate + '%',
+      最薄弱模块: det.weakMod ? `${det.weakMod.name}(${det.weakMod.rate}%)` : '—',
+      最近活跃: d.lastTs ? fmtDate(d.lastTs) : '',
+    };
+    qd.modules.forEach(m => {
+      const x = det.mods.find(mm => mm.id === m.id);
+      row[m.name] = (x && x.total) ? x.rate + '%' : '—';
+    });
+    row['薄弱分类Top3'] = det.cats.slice(0, 3).map(c => `${c.category}(${c.rate}%)`).join(' | ');
+    return row;
+  });
+  downloadFile(`SI区域学习诊断_${today()}.csv`, toCSV(rows), 'text/csv');
+}
+
+// 单个大区的详细诊断（弹窗里的导出按钮）
+function exportSingleDeptCSV(det, qd) {
+  const lines = [];
+  lines.push(['销售区域', det.dept]);
+  lines.push(['学员数', det.people]);
+  lines.push(['考核次数', det.exams]);
+  lines.push(['平均正确率', det.avg + '%']);
+  lines.push(['合格率', det.passRate + '% (' + det.passN + '/' + det.exams + ')']);
+  lines.push([]);
+  lines.push(['能力模块', '正确率', '作答数']);
+  qd.modules.forEach(m => {
+    const x = det.mods.find(mm => mm.id === m.id);
+    lines.push([m.name, (x && x.total) ? x.rate + '%' : '—', x ? x.total : 0]);
+  });
+  lines.push([]);
+  lines.push(['薄弱知识分类', '正确率', '作答数']);
+  det.cats.slice(0, 8).forEach(c => lines.push([c.category, c.rate + '%', c.total]));
+  lines.push([]);
+  lines.push(['学员', '工号', '考核次数', '平均正确率', '最高', '合格次数']);
+  det.trainees.forEach(t => lines.push([t.name, t.empId || '', t.exams, t.avg + '%', t.best + '%', t.pass + '/' + t.exams]));
+
+  const csv = '﻿' + lines.map(row => row.map(v => {
+    const s = String(v == null ? '' : v);
+    return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }).join(',')).join('\n');
+  downloadFile(`SI${det.dept}学习诊断_${today()}.csv`, csv, 'text/csv');
 }
 
 function copyText(txt) {
