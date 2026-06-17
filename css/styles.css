@@ -423,6 +423,18 @@ select.fld { cursor: pointer; }
 
 .table-scroll { overflow-x: auto; }
 
+/* 可点击行 / 个人详情 / 复制提示 */
+.record-table tr.row-click { cursor: pointer; }
+.record-table tr.row-click:hover td { background: #eef7f7; }
+.detail-id { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
+.toast {
+  position: fixed; left: 50%; bottom: 42px; transform: translateX(-50%) translateY(16px);
+  background: var(--deep); color: #fff; padding: 11px 20px; border-radius: 10px;
+  box-shadow: var(--shadow-lg); font-size: 13.5px; z-index: 300; opacity: 0;
+  transition: opacity .28s, transform .28s; max-width: 90vw;
+}
+.toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
 /* ----------------------------- 响应式 ----------------------------- */
 @media (max-width: 880px) {
   .main-nav { position: absolute; top: var(--header-h); left: 0; right: 0; flex-direction: column; gap: 0;

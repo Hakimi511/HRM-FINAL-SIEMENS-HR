@@ -15,7 +15,7 @@ export async function renderRecords(app) {
     h('div.eyebrow', null, '学习档案'),
     h('h2', null, prof && prof.name ? `${prof.name} 的成绩` : '我的成绩'),
     h('div', { style: 'display:flex;align-items:center;gap:10px;flex-wrap:wrap' },
-      prof && prof.name ? h('span.badge.badge-petrol', null, `👤 ${prof.name} · ${prof.dept || '未设部门'}`) : null,
+      prof && prof.name ? h('span.badge.badge-petrol', null, `👤 ${prof.name}（工号 ${prof.empId || '—'}）· ${prof.dept || '未设区域'}`) : null,
       h('p.text-muted', { style: 'margin:0' }, '记录保存在本浏览器本地，可导出后交给 HR 汇总分析。'),
     ),
   ));

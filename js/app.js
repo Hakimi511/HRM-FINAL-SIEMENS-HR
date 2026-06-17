@@ -75,7 +75,8 @@ export function refreshChip() {
     chip.classList.add('is-admin');
   } else {
     chip.classList.remove('is-admin');
-    chip.innerHTML = (p && p.name) ? `👤 ${esc(p.name)} · ${esc(p.dept || '')}` : '👤 登记身份';
+    chip.innerHTML = (p && p.name) ? `👤 ${esc(p.name)}（${esc(p.empId || '—')}）` : '👤 登记身份';
+    if (p && p.name) chip.title = `${p.name}｜工号 ${p.empId || '—'}｜${p.dept || ''}（点击修改）`;
   }
 }
 
@@ -91,30 +92,37 @@ function showModal(panel, { closable = true } = {}) {
   return close;
 }
 
-export function openIdentityModal() {
+export function openIdentityModal(force = false) {
   const p = getProfile() || { name: '', dept: DEPARTMENTS[0], empId: '' };
   const nameI = h('input.fld', { type: 'text', value: p.name || '', placeholder: '请输入姓名', maxlength: '20' });
+  const idI = h('input.fld', { type: 'text', value: p.empId || '', placeholder: '请输入工号（必填，格式不限）', maxlength: '30' });
   const deptS = h('select.fld', null, ...DEPARTMENTS.map(d => h('option', { value: d, selected: d === p.dept ? '' : null }, d)));
-  const idI = h('input.fld', { type: 'text', value: p.empId || '', placeholder: '工号（选填）', maxlength: '20' });
+  const msg = h('div', { style: 'color:var(--err);font-size:12.5px;height:16px;margin:2px 0 2px' });
+
+  const save = () => {
+    const name = nameI.value.trim();
+    const empId = idI.value.trim();
+    if (!name) { msg.textContent = '请填写姓名'; nameI.focus(); return; }
+    if (!empId) { msg.textContent = '请填写工号（必填）'; idI.focus(); return; }
+    setProfile({ name, dept: deptS.value, empId });
+    close(); refreshChip(); router();
+  };
+  nameI.addEventListener('keydown', e => { if (e.key === 'Enter') idI.focus(); });
+  idI.addEventListener('keydown', e => { if (e.key === 'Enter') save(); });
 
   const panel = h('div.id-card', null,
     h('h3', null, '👤 学员身份登记'),
-    h('p.text-muted', { style: 'margin-top:-4px' }, '登记后，你的考核成绩将归档到本人名下，便于 HR 统计与分析。'),
+    h('p.text-muted', { style: 'margin-top:-4px' }, '请填写姓名与工号。成绩将按工号归档，便于 HR 精准识别学员（避免重名）。'),
     field('姓名', nameI),
+    field('工号（必填）', idI),
     field('所属销售区域', deptS),
-    field('工号', idI),
-    h('div.btn-row', { style: 'margin-top:18px' },
-      h('button.btn', { onclick: () => {
-        const name = nameI.value.trim();
-        if (!name) { nameI.focus(); nameI.style.borderColor = 'var(--err)'; return; }
-        setProfile({ name, dept: deptS.value, empId: idI.value.trim() });
-        close(); refreshChip();
-        router();
-      } }, '保存身份'),
-      h('button.btn.btn-ghost', { onclick: () => { setProfile({ name: '访客', dept: deptS.value }); close(); refreshChip(); router(); } }, '以访客身份浏览'),
+    msg,
+    h('div.btn-row', { style: 'margin-top:6px' },
+      h('button.btn', { onclick: save }, '保存并进入'),
+      force ? null : h('button.btn.btn-ghost', { onclick: () => close() }, '取消'),
     ),
   );
-  const close = showModal(panel);
+  const close = showModal(panel, { closable: !force });
   setTimeout(() => nameI.focus(), 50);
 }
 
@@ -181,5 +189,5 @@ refreshChip();
 window.addEventListener('hashchange', router);
 router();
 
-// 首次访问引导登记身份（非阻断，可选访客）
-if (!hasProfile()) setTimeout(() => { if (!hasProfile()) openIdentityModal(); }, 400);
+// 首次访问强制登记身份（工号必填，不可跳过）
+if (!hasProfile()) setTimeout(() => { if (!hasProfile()) openIdentityModal(true); }, 400);

@@ -46,7 +46,8 @@ export async function renderAdmin(app) {
       ? h('button.btn.btn-ghost.btn-sm', { onclick: () => { clearDemo(); renderAdmin(app); } }, '清除演示数据')
       : h('button.btn.btn-sm', { onclick: () => { seedDemo(qd); renderAdmin(app); } }, '✨ 载入演示数据'),
     h('button.btn.btn-ghost.btn-sm', { onclick: () => fileInput.click() }, '⬆ 导入学员成绩'),
-    h('button.btn.btn-ghost.btn-sm', { onclick: () => exportCSV(results) }, '⬇ 导出 CSV 报表'),
+    h('button.btn.btn-ghost.btn-sm', { onclick: () => exportSummaryCSV(byTrainee(results), qd) }, '⬇ 导出员工汇总(CSV)'),
+    h('button.btn.btn-ghost.btn-sm', { onclick: () => exportCSV(results) }, '⬇ 导出逐次成绩(CSV)'),
     h('button.btn.btn-ghost.btn-sm', { onclick: () => downloadJSON(`SI培训成绩备份_${today()}.json`, exportResults(false)) }, '⬇ 导出 JSON 备份'),
     results.length ? h('button.btn.btn-ghost.btn-sm', { onclick: () => { if (confirm('确定清空全部成绩数据（含导入与演示）？')) { clearResults(); renderAdmin(app); } } }, '清空全部') : null,
     fileInput,
@@ -135,26 +136,29 @@ export async function renderAdmin(app) {
       h('div.lead-row', null, ...top.map((t, i) => h('div.lead-card', null,
         h('div', { class: 'lead-medal m' + i }, i < 3 ? ['🥇', '🥈', '🥉'][i] : (i + 1)),
         h('div.lead-name', null, esc(t.name)),
-        h('div.text-muted', { style: 'font-size:12px' }, esc(t.dept)),
+        h('div.text-muted', { style: 'font-size:11.5px' }, `${esc(t.empId || '—')} · ${esc(t.dept)}`),
         h('div.lead-score', null, t.avg + '%'),
       ))),
     ));
   }
 
-  // ---------- 学员明细表 ----------
+  // ---------- 学员明细表（按工号汇总） ----------
   app.appendChild(h('div.section-head', { style: 'margin-top:30px' },
-    h('h3', { style: 'margin:0' }, '👥 学员学习明细'),
-    h('span.sub', null, `共 ${trainees.length} 名学员`),
+    h('h3', { style: 'margin:0' }, '👥 学员学习明细（按工号汇总）'),
+    h('span.sub', null, `共 ${trainees.length} 名学员 · 点击任一行查看个人答题详情`),
   ));
+  app.appendChild(h('p.text-muted', { style: 'font-size:12.5px;margin:-6px 0 10px' },
+    '💡 工号唯一标识每位学员，避免重名混淆；点「复制」即可复制工号，在 Teams 中查找该员工建立联系。'));
   const sorted = trainees.slice().sort((a, b) => b.avg - a.avg);
   app.appendChild(h('div.table-scroll', null,
     h('table.record-table', null,
       h('thead', null, h('tr', null,
-        h('th', null, '排名'), h('th', null, '姓名'), h('th', null, '区域'),
+        h('th', null, '排名'), h('th', null, '工号'), h('th', null, '姓名'), h('th', null, '区域'),
         h('th', null, '考核次数'), h('th', null, '平均正确率'), h('th', null, '最高'),
-        h('th', null, '合格次数'), h('th', null, '最近活跃'), h('th', null, '状态'))),
-      h('tbody', null, ...sorted.map((t, i) => h('tr', null,
+        h('th', null, '合格次数'), h('th', null, '最近活跃'), h('th', null, '状态'), h('th', null, '操作'))),
+      h('tbody', null, ...sorted.map((t, i) => h('tr', { class: 'row-click', onclick: () => showTraineeDetail(t, qd) },
         h('td', null, String(i + 1)),
+        h('td', { style: 'font-weight:700;color:var(--petrol-darker)' }, t.empId || '—'),
         h('td', { style: 'font-weight:700' }, esc(t.name)),
         h('td', null, esc(t.dept || '—')),
         h('td', null, String(t.exams)),
@@ -164,6 +168,9 @@ export async function renderAdmin(app) {
         h('td', null, t.lastTs ? fmtDate(t.lastTs) : '—'),
         h('td', null, h('span', { class: 'badge ' + (t.avg >= 80 ? 'badge-ok' : t.avg >= 60 ? 'badge-petrol' : 'badge-err') },
           t.avg >= 80 ? '优秀' : t.avg >= 60 ? '达标' : '待提升')),
+        h('td', null, t.empId
+          ? h('button.btn.btn-ghost.btn-sm', { onclick: (e) => { e.stopPropagation(); copyText(t.empId); } }, '复制')
+          : '—'),
       ))),
     ),
   ));
@@ -176,14 +183,19 @@ export async function renderAdmin(app) {
 // 计算函数
 // =========================================================================
 function byTrainee(results) {
+  // 以工号为唯一键聚合（避免重名）；无工号则退回用姓名
   const map = new Map();
   for (const r of results) {
-    const key = r.name || '(未登记)';
-    if (!map.has(key)) map.set(key, { name: key, dept: r.dept || '', empId: r.empId || '', exams: 0, rates: [], best: 0, pass: 0, lastTs: 0 });
+    const key = r.empId || r.name || '(未登记)';
+    if (!map.has(key)) map.set(key, { key, name: r.name || '(未登记)', empId: r.empId || '', dept: r.dept || '', exams: 0, rates: [], best: 0, pass: 0, lastTs: 0, mod: {} });
     const t = map.get(key);
     t.exams++; t.rates.push(r.rate || 0); t.best = Math.max(t.best, r.rate || 0);
     if (r.pass) t.pass++;
-    if ((r.ts || 0) > t.lastTs) { t.lastTs = r.ts || 0; t.dept = r.dept || t.dept; }
+    if ((r.ts || 0) > t.lastTs) { t.lastTs = r.ts || 0; t.dept = r.dept || t.dept; t.name = r.name || t.name; }
+    for (const d of (r.detail || [])) {   // 逐题明细 → 各模块掌握度（个人详情用）
+      const m = t.mod[d.module] || (t.mod[d.module] = { c: 0, t: 0 });
+      m.t++; if (d.correct) m.c++;
+    }
   }
   return [...map.values()].map(t => ({ ...t, avg: avg(t.rates) }));
 }
@@ -270,9 +282,84 @@ function today() { return new Date().toISOString().slice(0, 10); }
 
 function exportCSV(results) {
   const rows = results.map(r => ({
-    时间: fmtDate(r.ts), 姓名: r.name || '', 区域: r.dept || '', 工号: r.empId || '',
+    时间: fmtDate(r.ts), 工号: r.empId || '', 姓名: r.name || '', 区域: r.dept || '',
     考核范围: r.title || '', 题数: r.total, 答对: r.correct, 正确率: (r.rate || 0) + '%',
     评级: r.grade || '', 是否合格: r.pass ? '合格' : '不合格', 用时秒: r.timeSpent || 0,
   }));
-  downloadFile(`SI培训成绩报表_${today()}.csv`, toCSV(rows), 'text/csv');
+  downloadFile(`SI逐次成绩报表_${today()}.csv`, toCSV(rows), 'text/csv');
+}
+
+// 员工汇总报表：每人一行（工号优先）+ 各能力模块正确率，便于 HR 详细分析
+function exportSummaryCSV(trainees, qd) {
+  const rows = trainees.slice().sort((a, b) => b.avg - a.avg).map(t => {
+    const row = {
+      工号: t.empId || '', 姓名: t.name || '', 区域: t.dept || '',
+      考核次数: t.exams, 平均正确率: t.avg + '%', 最高正确率: t.best + '%',
+      合格次数: `${t.pass}/${t.exams}`,
+      状态: t.avg >= 80 ? '优秀' : t.avg >= 60 ? '达标' : '待提升',
+      最近活跃: t.lastTs ? fmtDate(t.lastTs) : '',
+    };
+    qd.modules.forEach(m => {
+      const x = t.mod[m.id];
+      row[m.name] = (x && x.t) ? Math.round(x.c / x.t * 100) + '%' : '—';
+    });
+    return row;
+  });
+  downloadFile(`SI员工学习汇总_${today()}.csv`, toCSV(rows), 'text/csv');
+}
+
+// 个人答题详情弹窗：工号（可复制）+ 各能力模块掌握度
+function showTraineeDetail(t, qd) {
+  const modBars = qd.modules.map(m => {
+    const x = t.mod[m.id]; if (!x || !x.t) return null;
+    const rate = Math.round(x.c / x.t * 100);
+    return bar(`${m.icon} ${m.name}`, rate, { sub: `${x.t} 题`, danger: rate < 70 });
+  }).filter(Boolean);
+
+  const panel = h('div.id-card', { style: 'width:min(560px,94vw)' },
+    h('h3', { style: 'margin-bottom:6px' }, `👤 ${esc(t.name)}`),
+    h('div.detail-id', null,
+      h('span.text-muted', null, '工号　'),
+      h('b', { style: 'color:var(--petrol-darker);font-size:15px' }, t.empId || '（未填写）'),
+      t.empId ? h('button.btn.btn-ghost.btn-sm', { style: 'margin-left:10px', onclick: () => copyText(t.empId) }, '复制工号') : null,
+    ),
+    h('p.text-muted', { style: 'margin:8px 0 12px;font-size:13px' },
+      `区域：${esc(t.dept || '—')}　|　考核 ${t.exams} 次　|　平均 ${t.avg}%　|　最高 ${t.best}%　|　合格 ${t.pass}/${t.exams}`),
+    h('div.panel-head', null, h('h3', { style: 'font-size:14px;margin:0' }, '各能力模块答题情况')),
+    modBars.length ? h('div.bars', { style: 'margin-top:8px' }, ...modBars)
+      : h('p.text-muted', null, '该学员暂无逐题明细数据（可能为导入的汇总记录）。'),
+    h('div.btn-row', { style: 'margin-top:18px' }, h('button.btn', { onclick: () => close() }, '关闭')),
+  );
+  const close = miniModal(panel);
+}
+
+function miniModal(panel) {
+  const back = h('div.modal', { style: 'display:grid' });
+  back.appendChild(h('div.modal-backdrop'));
+  back.appendChild(h('div.modal-mini', null, panel));
+  document.body.appendChild(back);
+  document.body.style.overflow = 'hidden';
+  const close = () => { back.remove(); document.body.style.overflow = ''; };
+  back.querySelector('.modal-backdrop').addEventListener('click', close);
+  return close;
+}
+
+function copyText(txt) {
+  const ok = () => toast('已复制工号：' + txt + '（可粘贴到 Teams 搜索）');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(ok).catch(() => fallbackCopy(txt, ok));
+  } else fallbackCopy(txt, ok);
+}
+function fallbackCopy(txt, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try { document.execCommand('copy'); } catch {}
+  ta.remove(); if (cb) cb();
+}
+function toast(msg) {
+  const el = h('div.toast', null, msg);
+  document.body.appendChild(el);
+  setTimeout(() => el.classList.add('show'), 10);
+  setTimeout(() => { el.classList.remove('show'); setTimeout(() => el.remove(), 300); }, 1800);
 }

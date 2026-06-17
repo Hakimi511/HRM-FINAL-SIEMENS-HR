@@ -23,7 +23,7 @@ function save(key, val) {
 
 // ---------------- 学员档案 ----------------
 export function getProfile() { return load(K_PROFILE, null); }
-export function hasProfile() { const p = getProfile(); return !!(p && p.name); }
+export function hasProfile() { const p = getProfile(); return !!(p && p.name && p.empId); }
 export function setProfile(p) {
   const prev = getProfile() || {};
   const merged = { name: '', dept: DEPARTMENTS[0], empId: '', ...prev, ...p, updatedAt: Date.now() };
@@ -55,6 +55,7 @@ export function clearResults() { save(K_RESULTS, []); }
 /** 仅当前学员的成绩 */
 export function getMyResults() {
   const p = getProfile();
+  if (p && p.empId) return getResults().filter(r => r.empId === p.empId);  // 按工号归档（唯一）
   const name = p && p.name ? p.name : null;
   return getResults().filter(r => (name ? r.name === name : !r.name));
 }
@@ -141,6 +142,7 @@ export function seedDemo(qdata) {
     let name;
     do { name = rand(DEMO_SURNAMES) + rand(DEMO_GIVEN); } while (usedNames.has(name));
     usedNames.add(name);
+    const empId = 'SI' + String(20250001 + i);     // 演示工号（唯一）
     const dept = rand(DEPARTMENTS);
     const skill = 0.60 + Math.random() * 0.36;       // 个人水平 0.60~0.96
     const attempts = randint(1, 4);
@@ -165,7 +167,7 @@ export function seedDemo(qdata) {
       const ts = now - randint(0, 45) * 86400000 - randint(0, 86400) * 1000; // 过去45天内
       results.push({
         id: 'demo-' + i + '-' + a + '-' + Math.random().toString(36).slice(2, 6),
-        ts, name, dept, title, total, correct, rate, pass, grade,
+        ts, name, empId, dept, title, total, correct, rate, pass, grade,
         timeSpent: randint(180, 1200), mode: 'exam', demo: true, detail,
       });
     }
